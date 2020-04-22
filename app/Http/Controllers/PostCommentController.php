@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests\PostCommentRequest;
 use Auth;
 
+
+
 use App\PostComment;
 
 class PostCommentController extends Controller
@@ -17,7 +19,7 @@ class PostCommentController extends Controller
      */
     public function index()
     {
-        //
+        return view ('postComments.index');
     }
 
 
