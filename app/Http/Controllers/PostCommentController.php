@@ -19,7 +19,7 @@ class PostCommentController extends Controller
      */
     public function index()
     {
-        return view ('postComments.index');
+        //
     }
 
 
