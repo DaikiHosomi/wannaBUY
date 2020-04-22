@@ -62,6 +62,7 @@
                                     <a href="{{ route('products.create') }}" class="dropdown-item">出品する</a>
                                     <a href="{{ route('users.index') }}" class="dropdown-item">MyPageへ</a>
                                     <a href="{{ route('users.create') }}" class="dropdown-item">プロフィールを登録する</a>
+                                    <a href="{{ route('contacts.index') }}" class="dropdown-item">お問い合わせ</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

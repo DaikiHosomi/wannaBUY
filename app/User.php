@@ -48,6 +48,10 @@ class User extends Authenticatable
         return $this->hasMany(Product::class, 'user_id', 'id');
     }
 
+    public function contacts() {
+        return $this->hasMany(Contact::class, 'user_id', 'id');
+    }
+
     public function favorites(){
         return $this->belongsToMany(Product::class, 'favorites', 'user_id', 'product_id')->withTimestamps();
     }

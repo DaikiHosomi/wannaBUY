@@ -41,6 +41,9 @@ Route::resource('/products/{product}/buyers', 'BuyerController')->middleware('au
 Route::Get('productComments', 'ProductCommentController@index')->name('productComments.index')->middleware('auth');
 Route::resource('/products/{product}/productComments', 'ProductCommentController', ['except' => ['index']])->middleware('auth');
 Route::resource('/users', 'UserController');
+Route::post('/contacts/send', 'ContactController@send')->name('contacts.sned');
+Route::resource('/contacts', 'ContactController',['except' => ['create', 'show', 'update', 'destroy', 'edit']]);
+
 
 Route::group(['middleware'=>'auth'],function(){
     Route::group(['prefix'=>'products/{id}'],function(){
