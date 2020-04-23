@@ -1,0 +1,244 @@
+.btn {
+    background-color: #1B435D;
+    color: white; 
+    font-size: 60px;
+    border-radius: 20px;
+    padding: 20px 60px;
+    margin-right: 50px;
+    margin-bottom: 100px;
+    opacity: 1;
+
+}
+
+.btn:hover {
+    opacity: 1; 
+    border-color:black; 
+  }
+
+
+header.masthead {
+    width: 1440px;
+    height: 600px;
+    text-align: center;
+    background-image: url("https://cdn.pixabay.com/photo/2016/01/20/11/54/book-wall-1151405_1280.jpg");
+    background-color:rgba(255,255,255,0.6);
+    background-blend-mode:lighten;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+}
+
+
+
+
+.intro-heading {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    color: #091026;
+    font-size: 170px;
+    text-align: center;
+    padding: 100px;
+}
+
+section.features {
+    background: rgba(181, 179, 182, 0.25);
+    width: 1440px;
+    height: 1050px;
+}
+
+
+.feature-title {
+    margin: 0 auto;
+    text-align: center;
+    font-family:'Ubuntu', sans-serif;
+    margin-top:100px;
+    font-size: 50px;
+    color: #091026;
+}
+
+.feature-heading {   
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Sawarabi Gothic', sans-serif;
+    font-size: 50px;
+    color:#CC3366 ; 
+    font-weight: bold;
+}
+
+
+.feature-list {
+    text-align: center;
+    font-size: 30px;
+    font-family:'Sawarabi Gothic', sans-serif;
+    padding-top: 20px;
+    font-weight: bold;
+}
+
+.feature-box {
+    width: 500px;
+    height: 200px;
+    background-color:rgba(220, 214, 207, 0.4);
+    border-radius: 40px;
+}
+
+
+
+
+.feature-box:hover {
+    cursor: pointer;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+     transform: translateY(-0.1875em);
+}
+
+.feature-text {
+    color:#01436F;
+    padding: 50px;
+    text-align:justify-all; 
+    font-size: 15px;
+    font-family:'Sawarabi Gothic', sans-serif;
+}
+
+
+
+
+section.way-to-use {
+    background: rgba(229, 229, 229, 0.44);
+    width: 1440px;
+    height: 1610px; 
+}
+
+.way-title {
+    margin: 0 auto;
+    text-align: center;
+    font-family:'Ubuntu', sans-serif;
+    font-size: 50px;
+    color: #091026;
+}
+
+.way {
+    opacity: 0.6;
+}
+
+.image-list {
+    height: 450px;
+    width: 450px;
+}
+
+img.image-list {
+    width:500px;
+    height: 400px;
+    border-radius: 40px;
+}
+
+
+.way-box {
+    width: 500px;
+    height: 300px;
+    background-color:rgba(220, 214, 207, 0.4);
+    border-radius: 40px;
+}
+
+.way-box:hover {
+    cursor: pointer;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+     transform: translateY(-0.1875em);
+}
+
+.way-item {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 30px;
+}
+
+.way-text {
+    color:#01436F;
+    text-align:justify-all; 
+    font-size: 18px;
+    font-family:'Sawarabi Gothic', sans-serif;
+    font-weight: bold;
+}
+section.last-page {
+    width: 1440px;
+    height: 600px;
+    text-align: center;
+    background-image: url("https://cdn.pixabay.com/photo/2016/01/20/11/54/book-wall-1151405_1280.jpg");
+    background-color:rgba(255,255,255,0.6);
+    background-blend-mode:lighten;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+}
+
+.last-heading {
+    margin: 0 auto;
+    text-align: center;
+    font-family:'Ubuntu', sans-serif;
+    margin-top:200px;
+    font-size: 70px;
+    color: #091026;
+}
+
+.last-text {
+    font-size: 20px;
+    opacity: 0.6;
+}
+
+
+.btn-square-so-login {
+    position: relative;
+    display: inline-block;
+    padding: 20px 60px;
+    margin-bottom: 100px;
+    text-decoration: none;
+    color: #FFF;
+    background: #1B435D;;/*色*/
+    border-radius: 15px;/*角の丸み*/
+    box-shadow: 0 7px 0 rgb(0, 96, 137);
+    text-shadow: 0 10px 10px rgb(0, 96, 137);
+  }
+
+  .btn-square-so-login:hover {
+    top: -4px;
+    box-shadow: 0 7px 0 rgb(0, 96, 137);
+    font-weight: bold;
+    color: #FFF;
+  }
+
+  .btn-square-so-login:active {
+    top: 3px;
+    box-shadow: none;
+  }
+
+
+
+  .btn-square-so-register {
+    position: relative;
+    display: inline-block;
+    padding: 20px 60px;
+    margin-bottom: 100px;
+    text-decoration: none;
+    color: #FFF;
+    background: rgb(3, 122, 124);/*色*/
+    border-radius: 15px;/*角の丸み*/
+    box-shadow: 0 7px 0 rgb(0, 96, 137);
+    text-shadow: 0 10px 10px rgb(0, 96, 137);
+  }
+
+  .btn-square-so-register:hover {
+    top: -4px;
+    box-shadow: 0 7px 0 rgb(0, 96, 137);
+    font-weight: bold;
+    color: #FFF;
+  }
+
+  .btn-square-so-register:active {
+    top: 3px;
+    box-shadow: none;
+  }
+
+
+  
+  
+ 

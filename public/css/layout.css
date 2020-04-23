@@ -1,0 +1,10 @@
+#app {
+    width: 1440px;
+    background-image: url("https://cdn.pixabay.com/photo/2016/01/20/11/54/book-wall-1151405_1280.jpg");
+    background-color:rgba(255,255,255,0.6);
+    background-blend-mode:lighten;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+}
