@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
 
-                @if()
+                
                     <div class="card-header alert alert-info">現在交渉依頼はありません。</div>
                 
                     <div class="card-header alert alert-info">あなたの商品に交渉したいユーザーが現れました。<br>交渉ページへ進んでください。</div>  
@@ -38,12 +38,6 @@
                     @endforeach
                         
                    
-                  
-                    
-
-
-
-
             
                 </div>
             </div>

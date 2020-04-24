@@ -1,10 +1,55 @@
 #app {
     width: 1440px;
     background-image: url("https://cdn.pixabay.com/photo/2016/01/20/11/54/book-wall-1151405_1280.jpg");
-    background-color:rgba(255,255,255,0.6);
+    background-color:rgba(255,255,255,0.4);
     background-blend-mode:lighten;
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
     background-size: cover;
+    min-height: 700px;
+    height: auto;
+
+} 
+
+.footer {
+    background:rgba(163, 151, 123, 0.9);
+    height: 60px;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+
+.footer-heading {
+    line-height: 60px;
+    font-size: 20px;
+    color: black;
+    padding-left: 175px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.navbar-brand {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.top-card-header {
+  
+    font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: wheat;
+}
+
+.head-container {
+    margin: 30px;
+}
+
+
+
+
+.post-card-header {
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    background-color: wheat;
 }
