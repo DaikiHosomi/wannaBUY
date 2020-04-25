@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="head-container">
-    <div class="top-card-header text-center">掲示板で募る</div>
+    <div class="top-card-header text-center">Posting</div>
 
     <div class="card-body">
 
@@ -29,7 +29,7 @@
 
                             <div class="form-group">
                                 <p for="exampleInputEmail1" class="text-center">「 参考書を募ってみよう！講義のレビューを聞いてみよう！ 」</p>
-                                <textarea type="text" class="form-control" id="exampleInputEmail1" placeholder="入力してください" name="title" rows="3"></textarea>
+                                <textarea type="text" class="form-control" id="exampleInputEmail1" placeholder="入力してください" name="title" rows="2"></textarea>
                             </div>
                             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                             <div class="col text-center">

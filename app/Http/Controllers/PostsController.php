@@ -16,7 +16,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::latest('published_at')->paginate(10);
         $posts->load('user');
         // dd($posts);
         return view('posts.index', [

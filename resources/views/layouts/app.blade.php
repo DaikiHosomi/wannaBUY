@@ -53,19 +53,19 @@
                         @else
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="{{ route('products.create') }}">出品する <span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="{{ route('products.create') }}">出品<span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('posts.create') }}">掲示板で投稿する</a>
+                                    <a class="nav-link" href="{{ route('posts.index') }}">掲示板</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('posts.index') }}">掲示板ページ</a>
+                                    <a class="nav-link" href="{{ route('users.index') }}">MYPage</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('users.index') }}">MYPageへ</a>
-                                </li>
+                                    <a class="nav-link" href="{{ route('productComments.index') }}">交渉依頼</a>
+                                </li> 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('productComments.index') }}">交渉依頼一覧</a>
+                                    <a class="nav-link" href="{{ route('contacts.index') }}">お問い合わせ</a>
                                 </li> 
                                 <li class="nav-item">
                                         <a class="nav-link" href="{{ route('logout') }}"

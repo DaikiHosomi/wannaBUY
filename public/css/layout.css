@@ -37,6 +37,7 @@
     font-size: 20px;
     font-family: 'Ubuntu', sans-serif;
     background-color: wheat;
+    border-radius: 100px;
 }
 
 .head-container {
@@ -53,3 +54,59 @@
     font-weight: bold;
     background-color: wheat;
 }
+
+.post-card {
+    height: auto;
+    border: 2px solid gainsboro;
+}
+
+.post-name {
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+}
+
+.post-button {
+    color: white;
+    width: 200px;
+    height: 45px;
+    line-height: 45px;
+    background-color:#003300;
+    border-radius: 50px;
+    margin-top: 15px;
+}
+
+.post-title {
+    padding-left: 50px;
+    margin-bottom: 0;
+}
+
+
+.post-card-body {
+  padding: 10px 20px;
+  background-color:#EEEEEE;
+  min-height: 150px;
+  height: auto;
+}
+
+
+.post-top {
+    padding: 20px 20px;
+}
+
+.post-time {
+    font-size: 12px;
+}
+
+.pagination { 
+    margin-top: 15px;
+    justify-content: center;
+ }
+
+ .post-comment-body {
+    padding: 10px 20px;
+     background-color:rgba(242, 242, 242, 0.2);
+     min-height: 100px;
+     height: auto;
+ }
