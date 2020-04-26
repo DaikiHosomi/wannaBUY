@@ -67,6 +67,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('contacts.index') }}">お問い合わせ</a>
                                 </li> 
+                                
                                 <li class="nav-item">
                                         <a class="nav-link" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
@@ -90,7 +91,7 @@
         <main class="py-5">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-md-9">
+                    <div class="col-md-10">
                         <div class="card my-3">
                             @if (session('message'))
                                 <div class="alert alert-success">{{ session('message') }}</div>

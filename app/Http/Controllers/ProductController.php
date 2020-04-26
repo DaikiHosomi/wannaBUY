@@ -34,7 +34,7 @@ class ProductController extends Controller
             $user = Auth::user();
             $products = Product::latest('published_at')
             ->where('product_category_id', $q['product_category_id'])
-            ->paginate(6);
+            ->paginate(12);
 
             $products->load('user','productCategory','productCondition', 'transactionWay', 'productImages');
             return view('products.index', [
@@ -45,7 +45,7 @@ class ProductController extends Controller
             $user = Auth::user();
             $products = Product::latest('published_at')
             ->where('published_at', '<=', Carbon::now())
-            ->paginate(6);
+            ->paginate(12);
 
             $products->load('user','productCategory','productCondition', 'transactionWay', 'productImages');
             return view('products.index', [

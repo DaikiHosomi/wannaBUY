@@ -139,14 +139,14 @@
 
                     <div class="row my-5">
                         <div class="col-md-6">
-                            <img src="https://lh3.googleusercontent.com/proxy/UyU9hWvLmAlje9-jIRiLkUnSBuVfXsooKVXqgBRwnhID4yENGvrB99HFXpB99gHGGHxX_VmY9brIYrjdrEIc3ZTTEiU" class="image-list img-fluid"  alt="">
+                            <img src="https://www.apu.ac.jp/home/img/contents/campusmap.html/a.jpg" class="image-list img-fluid"  alt="">
                         </div>
                         <div class="col-md-6">
                             <div class="way-box box mt-5">
                                 <div class="way-item py-3">In actioning</div>
                                 <ol style="list-style-type: decimal"  class="way-text py-1">
                                     <li>交渉受付ページから交渉画面へ行く</li>
-                                    <li>交渉画面で、交渉日時を決める</li>
+                                    <li>交渉画面で、 取引日時を決める</li>
                                     <li>（取引方法は、基本的に天空か下界にて現金直接取引）</li>
                                     <li>合意の上、取引を行う</li>
                                     <li>出品者は、取引直後、取引完了ボタンを押す</li>
