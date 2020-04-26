@@ -1,51 +1,63 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="card-header">お問い合わせ</div>
-<div class="card-body">
+<div class="head-container">
+    <div class="top-card-header text-center">Contact</div>
+        <div class="row justify-content-center">
+            
+            <div class="col-md-10 my-2">
+                <div class="card">
+                    @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                    @endif
 
-    @if (session('status'))
-        <div class="alert alert-success" role="alert">
-            {{ session('status') }}
-        </div>
-    @endif
 
-    <div class="card">
-        <div class="card-body">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                    </ul>
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                        </ul>
+                    </div>
+                    @endif
+
+                      
+                    <form action="{{ route('contacts.store') }}" method="POST">
+                        {{ csrf_field() }}
+
+                        <div class="row justify-content-center mt-3" >
+                            <div class="card col-md-10 p-4 font-weight-bold" style="background-color:rgba(249, 244, 235, 1);">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">名前</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="入力してください" name="name">
+                                </div>
+    
+    
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">メールアドレス</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="入力してください">
+                                </div>
+    
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">お問い合わせ内容</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="５" name="comment" placeholder="入力してください"></textarea>
+                                </div>
+                                @auth 
+                                <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                                @endauth
+                            </div>
+                        </div>
+                        <div class="text-center">
+                        <button type="submit" class="btn btn-secondary my-3 w-50">確認画面へ</button>
+                        </div>
+                    </form>
+
+
                 </div>
-            @endif
-
-           <form action="{{ route('contacts.store') }}" method="POST">
-                {{ csrf_field() }}
-
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">名前</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="入力してください" name="name">
-                     </div>
-
-
-                     <div class="form-group">
-                        <label for="exampleInputEmail1">E-mail Adress</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
-                      </div>
-
-                      <div class="form-group">
-                        <label for="exampleFormControlTextarea1">お問い合わせ内容</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="５" name="comment"></textarea>
-                      </div>
-                     @auth 
-                    <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-                    @endauth
-                <button type="submit" class="btn btn-primary">確認画面へ</button>
-            </form>
-           
+            </div>
         </div>
-    </div>
+</div>   
 @endsection
