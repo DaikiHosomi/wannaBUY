@@ -30,7 +30,7 @@
                                 <div class="form-group row">
                                     <label for="image" class="col-md-4  col-form-label">プロフィール画像</label>    
                                     <input type="file" name="image" class="col-md-8">
-                                    <img src="{{ $user->image }}" alt="" class="img-responsive img-thumbnail" style="height: 250px; width:400px; ">
+                                    <img src="{{ $user->image }}" alt="" class="img-responsive img-thumbnail" style="objective-fit: cover; height: 250px; width:400px; ">
                                     @if ($errors->has('image'))
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('image') }}</strong>

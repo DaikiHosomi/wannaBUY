@@ -152,7 +152,7 @@ class ProductController extends Controller
                 }
 
          }
-        return redirect('/')->with('message', '商品を出品しました');   
+        return redirect('/products')->with('message', '商品を出品しました');   
     }
 
     
@@ -265,7 +265,7 @@ class ProductController extends Controller
             
        }
     
-        return redirect('/')->with('message', '商品を編集しました');;
+        return redirect('/products')->with('message', '商品を編集しました');;
     
     }
 
@@ -281,7 +281,7 @@ class ProductController extends Controller
             return abort (500);
         } else {
             $product->delete();
-            return redirect("/")->with('message', '商品を削除しました');
+            return redirect("/products")->with('message', '商品を削除しました');
         }
     }
 

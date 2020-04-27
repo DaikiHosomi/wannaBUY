@@ -26,13 +26,17 @@
                 <div class="intro-text">
                     <div class="intro-heading">wannaBUY</div>
                 </div>
-
-                <div class="button">  
-                     <a href="{{ route('login') }}" class="btn-square-so-login mx-5">ログインする</a>            
-                     <a href="{{ route('register') }}" class="btn-square-so-register mx-5">会員登録する</a>
-                 </div>
-
-
+ 
+                    @guest
+                    <div class="button">  
+                        <a href="{{ route('login') }}" class="btn-square-so-login mx-5">ログインする</a>            
+                        <a href="{{ route('register') }}" class="btn-square-so-register mx-5">会員登録する</a>
+                    </div>
+                    @else
+                    <div class="button">
+                        <a href="{{ route('products.index') }}" class="btn-square-so-login mx-5">ホームへ</a> 
+                    </div>
+                    @endguest
             </div>
         </header>  
 
@@ -175,7 +179,12 @@
 
                     <div class="row">
                        <div class="col-md-12 my-5">
-                        <a href="{{ route('register') }}" class="btn-square-so-register">会員登録する</a>
+                        @guest           
+                            <a href="{{ route('register') }}" class="btn-square-so-register mx-5">会員登録する</a>
+                        </div>
+                        @else
+                            <a href="{{ route('products.index') }}" class="btn-square-so-login mx-5">ホームへ</a> 
+                        @endguest         
                        </div>
                     </div>
 

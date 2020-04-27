@@ -37,10 +37,18 @@
 
                     {{-- <h1>{{$user->name}}</h1> --}}
 
+                 @if(isset($user->department))
                     <div class="profile row justify-content-center">
+                        @if(isset($user->image))
                         <div class="col-md-5 text-center">
                             <img src="{{ $user->image }}" alt="" class="img-responsive img-thumbnail m-4 p-0" style="min-height: 200px; height-auto; objective-fit: cover; border-radius: 25%;">
                         </div>
+                        @else
+                        <div class="col-md-5">
+                            <a class="btn btn-secondary m-4 p-0 w-100 h-75 text-center" style="border-radius: 25%; color:white; line-height:110px;">画像が登録されていません</a>
+                        </div>
+                        @endif
+
 
                         <div class="col-md-7 my-4">
                             <div class="card-body text-center p-0 my-1">
@@ -56,6 +64,7 @@
 
                         </div>
                     </div>
+                 @endif
                 </div>
             </div>
 

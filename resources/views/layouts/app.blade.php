@@ -52,14 +52,14 @@
                             @endif
                         @else
                             <ul class="navbar-nav mr-auto">
-                                <li class="nav-item active">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('products.index') }}">ホーム<span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" href="{{ route('products.create') }}">出品<span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('posts.index') }}">掲示板</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('users.index') }}">MYPage</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('productComments.index') }}">交渉依頼</a>
@@ -67,21 +67,28 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('contacts.index') }}">お問い合わせ</a>
                                 </li> 
-                                
-                                <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
-                                       ログアウト
-                                     </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
 
 
-                                    </form>
-                                </li>      
-                            </ul>            
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        <img src="{{ Auth::user()->image }}" alt="" class="nav-image"> 
+                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    </a>
+    
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a href="{{ route('users.index') }}" class="dropdown-item">マイページへ</a>
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                            ログアウト
+                                        </a>
+    
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </li>
+                           </ul>            
                         @endguest
                     </ul>
                 </div>             

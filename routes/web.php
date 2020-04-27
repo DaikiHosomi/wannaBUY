@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/welcome', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
@@ -23,7 +23,7 @@ Route::post('/email', 'ChangeEmailController@sendChangeEmailLink');
 Auth::routes();
 
 // Route::get('/', 'PostsController@index')->name('posts.index');
-Route::get('/', 'ProductController@index')->name('products.index');
+// Route::get('/', 'ProductController@index')->name('products.index');
 
 Route::GET('/prosucts/search', 'ProductController@search')->name('products.search');
 

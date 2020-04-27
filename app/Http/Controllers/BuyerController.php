@@ -157,7 +157,7 @@ class BuyerController extends Controller
     {
         
         $wannaBuyer = Buyer::where('product_id', $product)->where('id', $wannaBuyer)->delete();
-        return redirect('/')->with('message', '取引を破棄しました');
+        return redirect('/products')->with('message', '取引を破棄しました');
     }
 
 }
