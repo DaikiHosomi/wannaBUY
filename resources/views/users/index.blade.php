@@ -88,7 +88,7 @@
                                             
                 
                                         <div class="row">
-                                            @foreach($user->products as $product)
+                                            @foreach($userProducts as $product)
                                                 <div class="col-md-4">
                                                 <div class="product-box post-card card float-left my-2">
                 
@@ -170,6 +170,7 @@
                                                 
                                                 </div>
                                                 @endforeach
+                                            {{ $userProducts->links() }}   
                                         </div>                                               
                                         </div>
                                     </div>
@@ -185,7 +186,7 @@
                                     
                                     <div class="card-body">
                     
-                                        @foreach($user->posts as $post)
+                                        @foreach($userPosts as $post)
                                         <div class="post-card">
                                             <div class="post-card-body">
                                             
@@ -198,9 +199,11 @@
                                             </div>
                                         </div>
                                         @endforeach
-        
+
+                                        {{ $userPosts->links() }}   
+                                      
                                     </div>
-                                
+                                 
                                 </div>
                             </div>
 
@@ -210,6 +213,7 @@
                 </div>
             </div>   
         </div>    
-    </div>    
-</div>    
+    </div> 
+    
+</div> 
 @endsection
