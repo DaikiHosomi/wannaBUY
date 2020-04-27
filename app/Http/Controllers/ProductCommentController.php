@@ -19,11 +19,13 @@ class ProductCommentController extends Controller
     public function index()
     {
 
-        $buyers = Buyer::
+        $buyers = Buyer::latest('created_at')->
         //productとのリレーションをロードする
         whereHas('product', function($q){
             $q->where('user_id', Auth::id());
         })->get();
+
+
 
         $buyers->load('user', 'product');
 

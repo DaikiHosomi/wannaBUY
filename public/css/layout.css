@@ -206,3 +206,11 @@
 .search-form {
     margin-left: 200px;
 }
+
+.profile {
+    background-image: url("https://cdn.pixabay.com/photo/2015/12/03/08/50/paper-1074131_1280.jpg");
+    background-color:rgba(255,255,255,0.4);
+    background-blend-mode:lighten;
+    border-radius: 20px;
+}
+

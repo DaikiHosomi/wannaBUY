@@ -29,7 +29,7 @@
                         {{ csrf_field() }}
 
                         <div class="row justify-content-center mt-3" >
-                            <div class="card col-md-10 p-4 font-weight-bold" style="background-color:rgba(249, 244, 235, 1);">
+                            <div class="card col-md-10 p-4 font-weight-bold" style="background-color:rgba(249, 244, 235, 1); border: 3px solid gainsboro;">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">名前</label>
                                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="入力してください" name="name">

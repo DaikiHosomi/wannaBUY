@@ -1,47 +1,61 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-
-                
-                    <div class="card-header alert alert-info">現在交渉依頼はありません。</div>
-                
-                    <div class="card-header alert alert-info">あなたの商品に交渉したいユーザーが現れました。<br>交渉ページへ進んでください。</div>  
-               
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-
-                    @foreach($buyers as $buyer)
-                   
-                    <div class="card">
-                    <h5 class="card-header">商品名 <a href="{{ route('products.show', $buyer->product->id) }}">【{{ $buyer->product->product_name }}】</a></h5>
-                        <div class="card-body">
-                            @if($buyer->product->sold == 1) 
-                                <h5>この取引は終了しました</h5>
-                            @else 
-                                <h5 class="card-title">交渉依頼者:{{ $buyer->user->name }}</h5>
-                                <p>交渉依頼時間:{{ $buyer->updated_at }}</p>
-                             <a href="{{ route('buyers.show', ['product'=>$buyer->product->id,'buyer'=>$buyer->id])}}" class="btn btn-primary">交渉＆取引ページへ</a>
-                            @endif
-                        </div>
-                    </div>
-
-                    @endforeach
-                        
-                   
-            
+<div class="head-container">
+    <div class="top-card-header text-center">Negotiation Request</div>
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                @if (session('status'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('status') }}
                 </div>
+                @endif
             </div>
         </div>
-    </div>
-</div>
+
+        <div class="row justify-content-center m-3">
+            <div class="card col-md-9">
+
+                <div class="card-header alert alert-success my-3 text-center"  style="border-radius: 25px;">交渉依頼の有無を確認をしよう</div>  
+                
+                
+                @foreach($buyers as $buyer)
+                     <div class="card m-2" style="border: 3px solid gainsboro;">
+                            <div class="cord-body p-2" style="background-color:rgba(249, 244, 235, 1);">
+                                <h4 class="header pt-2 text-center"><a href="{{ route('products.show', $buyer->product->id) }}">【{{ $buyer->product->product_name }}】</a></h4>
+                            @if($buyer->product->sold == 1)
+                                <p class="card-title font-weight-bold m-3"> <i class="fas fa-user-check mr-2"></i> {{ $buyer->user->name }} 様</p>
+                                <div class="text-center my-3">
+                                <h5 class="btn btn-secondary w-50 py-2" style="border: 5px solid gainsboro; border-radius: 25px;">この取引は終了しました</h5>
+                                </div>
+                            @else 
+                            <div class="row px-3">
+
+                                <div class="col-md-7 mt-3">
+                                    <h4 class="card-title font-weight-bold"> <i class="fas fa-user mr-2"></i>{{ $buyer->user->name }} 様</h4>
+                                </div>
+                                <div class="col-md-5">
+                                    <p class="text-right">交渉依頼日時<br>{{ $buyer->updated_at }}</p>
+                                </div>
+                            </div>
+
+                            <div class="text-center mb-3">
+                        
+                                <a href="{{ route('buyers.show', ['product'=>$buyer->product->id,'buyer'=>$buyer->id])}}"
+                                    type="button" class="btn w-50 font-weight-bold py-2" style="border: 5px solid gainsboro; border-radius: 25px; background-color:#008080; color: white;">
+                                    <i class="fas fa-bell"></i>  取引交渉画面へ <i class="fas fa-bell"></i>
+                                <a>
+                            </div>
+                                       
+                            @endif
+                            </div>   
+                    </div>
+
+                @endforeach
+            </div>
+        </div>
+ </div>
+
+                
+               
 @endsection

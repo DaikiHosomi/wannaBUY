@@ -21,7 +21,7 @@
                         @csrf
 
                         <div class="row justify-content-center m-3">
-                            <div class="card col-md-10 p-4 font-weight-bold" style="background-color:rgba(249, 244, 235, 1);">
+                            <div class="card col-md-10 p-4 font-weight-bold" style="background-color:rgba(249, 244, 235, 1); border: 3px solid gainsboro">
                                 
                                 <label>お名前:　{{ $contact->name }}</label>
                                 <input  type="hidden" name="name" value="{{ $contact->name }}">
@@ -43,12 +43,12 @@
                         　<div class="row">
                             <div class="col-md-6">
                                 <div class="text-center">
-                                    <button type="submit" name="action"　value="submit"　class="btn btn-secondary my-2 w-50">送信する</button>
+                                    <button type="submit" name="action"　value="submit"　class="btn btn-secondary mb-3 w-50">送信する</button>
                                 </div>        
                             </div>
                             <div class="col-md-6">
                                 <div class="text-center">
-                                    <button id="square_btn" onClick="history.back()" class="btn btn-dark my-2 w-50">入力内容修正</button>
+                                    <a class="btn btn-dark by-3 w-50"  onclick="history.back()" style="color:white;">入力内容修正</a>
                                 </div>
                             </div>
                         </div>

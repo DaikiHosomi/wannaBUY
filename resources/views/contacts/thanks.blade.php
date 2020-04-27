@@ -16,7 +16,7 @@
                 @endif
 
                 <div class="row justify-content-center mt-3">
-                    <div class="card col-md-10 p-4 font-weight-bold" style="background-color:rgba(249, 244, 235, 1);">
+                    <div class="card col-md-10 p-4 font-weight-bold" style="background-color:rgba(249, 244, 235, 1);  border: 3px solid gainsboro">
                         <h5 class="font-weight-bold">お問い合わせ内容を受け付けました。</h1>
                             
                         <br>

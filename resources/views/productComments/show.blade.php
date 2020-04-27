@@ -191,7 +191,7 @@
                     
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter" style="border-radius: 25px; border: 2px solid white;">
-                                    取引は行わない
+                                    取引は行わない。
                                 </button>
                                 
                                 <!-- Modal -->

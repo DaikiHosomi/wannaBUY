@@ -2,15 +2,13 @@
 
 @section('content')
 <div class="head-container">
-    <div class="row justify-content-center">
-        <div class="col-md-11">
-            <div class="post-top card">
-                <div class="top-card-header text-center">TimeLine</div>
-
-                <div class="col text-center">
-                   
-                    <a type="submit" class="post-button" href="{{ route('posts.create') }}"><i class="fas fa-hand-point-right"></i>投稿してみる<i class="fas fa-hand-point-left"></i></a>
-                </div>
+    <div class="top-card-header text-center mb-3">TimeLine</div>
+        <div class="row justify-content-center">
+            <div class="card col-md-11">
+                
+                    <div class="col text-center m-2">
+                        <a type="submit" class="post-button" href="{{ route('posts.create') }}"><i class="fas fa-hand-point-right"></i>投稿してみる<i class="fas fa-hand-point-left"></i></a>
+                    </div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -36,9 +34,9 @@
                     {{ $posts->links() }}
                 
                 </div>
+           
             </div>
         </div>
-    </div>
 </div>
 
 @endsection

@@ -70,7 +70,7 @@ class UserController extends Controller
      
         
 
-         return redirect('/users');   
+         return redirect('/users')->with('message', 'プロフィールを登録しました');   
         
     }
 
@@ -141,7 +141,7 @@ class UserController extends Controller
      
         
 
-         return redirect('/users');   
+         return redirect('/users')->with('message', 'プロフィールを編集しました');   
 
 
 
