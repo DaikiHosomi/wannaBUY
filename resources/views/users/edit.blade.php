@@ -26,11 +26,11 @@
 
 
                     <div class="row justify-content-center">
-                        <div class="card col-md-10 p-5 m-3 font-weight-bold" style="background-color:rgba(249, 244, 235, 1); border: 3px solid gainsboro;">
+                        <div class="card col-xs-12 col-md-10 p-4 m-3 font-weight-bold" style="background-color:rgba(249, 244, 235, 1); border: 3px solid gainsboro;">
                                 <div class="form-group row">
                                     <label for="image" class="col-md-4  col-form-label">プロフィール画像</label>    
-                                    <input type="file" name="image" class="col-md-8">
-                                    <img src="{{ $user->image }}" alt="" class="img-responsive img-thumbnail" style="objective-fit: cover; height: 250px; width:400px; ">
+                                    <input type="file" name="image" class="input-text col-md-8">
+                                    <img src="{{ $user->image }}" alt="" class="img-responsive img-thumbnail" style="objective-fit: cover; height: 250px; margin:0 auto;">
                                     @if ($errors->has('image'))
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('image') }}</strong>
@@ -122,11 +122,15 @@
                                     </div>
                                 </div>
 
-
-                                <div class="form-group pl-5">
-                                    <label for="introduction">自己紹介</label>
-                                    <textarea class="form-control" id="introduction" rows="4"　name="introduction"　placeholder="入力してください">{{ $user->introduction}}</textarea>
+                                <div class="row justify-content-center">
+                                    <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="introduction">自己紹介</label>
+                                        <textarea class="form-control" id="introduction" rows="4"　name="introduction"　placeholder="入力してください">{{ $user->introduction}}</textarea>
+                                    </div>
+                                    </div>
                                 </div>
+
             
         
                             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">          

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="head-container">
+<div class="head-container container">
     <div class="top-card-header text-center">Home</div>
         <div class="card-body">
             
@@ -60,7 +60,7 @@
                             @endif
                         <div class="row">
                             @foreach($products as $product)
-                             <div class="col-md-4">
+                             <div class="col-xs-2 col-md-4">
                                 <div class="product-box post-card card float-left my-3">
 
                             

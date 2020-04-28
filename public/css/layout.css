@@ -1,5 +1,5 @@
 #app {
-    width: 1440px;
+    width: 100%;
     background-image: url("https://cdn.pixabay.com/photo/2016/01/20/11/54/book-wall-1151405_1280.jpg");
     background-color:rgba(255,255,255,0.4);
     background-blend-mode:lighten;
@@ -117,19 +117,8 @@
     font-weight: bold;
  }
 
- .product-image {
-   
- }
-
- .product-option {
- }
-
-.product-text {
-
-}
-
 .product-step {
-    width: 300px;
+    width: 50%;
     margin: 0 auto;
     color: white;
     font-family: 'Ubuntu', sans-serif;
@@ -138,7 +127,7 @@
 }
 
 .product-box {
-    height: 410px;
+    height: 50%;
     background-color:rgba(249, 244, 235, 1);
 }
 
@@ -225,4 +214,36 @@ img.nav-image {
 img {
     object-fit: cover;
 }
+
+
+@media screen and (max-width:639px) {
+
+    .card-body {
+        width:100%;
+    }
+   
+    /*スマホ用のcssを記述*/
+    .input-text {
+        font-size: 1px;
+        text-align: center;
+    }
+
+    .product-step {
+        width:100%;
+        font-size: 7px;
+        color: white;
+        font-family: 'Ubuntu', sans-serif;
+        background-color:#003300;
+        border-radius: 50px;
+    }
+
+    textarea.introduction {
+        height: calc( 2em * 10 );
+    }
+
+    .post-create-text{
+        font-size: 10px;
+    }
+
+    }
 

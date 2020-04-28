@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="head-container">
+<div class="head-container container">
     <div class="top-card-header text-center">Confirmation</div>
         <div class="row justify-content-cente">
-            <div class="col-md-10 my-2">
+            <div class="col-md-10  my-2">
                 <div class="card">
                     @if ($errors->any())
                     <div class="alert alert-danger">
@@ -21,7 +21,7 @@
                         @csrf
 
                         <div class="row justify-content-center m-3">
-                            <div class="card col-md-10 p-4 font-weight-bold" style="background-color:rgba(249, 244, 235, 1); border: 3px solid gainsboro">
+                            <div class="card col-md-10  p-4 font-weight-bold" style="background-color:rgba(249, 244, 235, 1); border: 3px solid gainsboro">
                                 
                                 <label>お名前:　{{ $contact->name }}</label>
                                 <input  type="hidden" name="name" value="{{ $contact->name }}">
@@ -48,7 +48,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="text-center">
-                                    <a class="btn btn-dark by-3 w-50"  onclick="history.back()" style="color:white;">入力内容修正</a>
+                                    <a class="btn btn-dark by-3 w-50 mb-3"  onclick="history.back()" style="color:white;">入力内容修正</a>
                                 </div>
                             </div>
                         </div>

@@ -21,6 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Purple+Purse&family=Ubuntu:ital,wght@1,700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="mb-0">
@@ -98,7 +99,7 @@
         <main class="py-5">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-md-10">
+                    <div class="col-md-10 col-sm-12">
                         <div class="card my-3">
                             @if (session('message'))
                                 <div class="alert alert-success">{{ session('message') }}</div>

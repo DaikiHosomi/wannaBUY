@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="head-container">
+<div class="head-container container">
     <div class="top-card-header text-center">Thank You for contacting us !!</div>
         <div class="row justify-content-center">
-            <div class=" card col-md-10 my-2">
+            <div class="card col-md-10 my-2">
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -16,7 +16,7 @@
                 @endif
 
                 <div class="row justify-content-center mt-3">
-                    <div class="card col-md-10 p-4 font-weight-bold" style="background-color:rgba(249, 244, 235, 1);  border: 3px solid gainsboro">
+                    <div class="col-md-9 p-4 font-weight-bold" style="background-color:rgba(249, 244, 235, 1);  border: 3px solid gainsboro; width:85%;">
                         <h5 class="font-weight-bold">お問い合わせ内容を受け付けました。</h1>
                             
                         <br>

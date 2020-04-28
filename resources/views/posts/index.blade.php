@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="head-container">
+<div class="head-container container">
     <div class="top-card-header text-center mb-3">TimeLine</div>
         <div class="row justify-content-center">
             <div class="card col-md-11">
@@ -22,7 +22,7 @@
                         <div class="post-card-body">
                         
                         <h5 class="card-title"><img src="{{$post->user->image}}" alt="" class="img-responsive img-thumbnail" style="height: 50px; width:50px;">
-                            <p class="post-time" style="float:right;"> {{ $post->published_at }}</p>
+                            <p class="input-text post-time" style="float:right;"> {{ $post->published_at }}</p>
                                 <a href="{{ route('users.show', $post->user_id)}}" class="post-name px-3">
                                 {{ $post->user->name }}</a></h5>
                              <a href="{{ route('posts.show', $post->id) }}" class="btn btn-secondary" style="float:right;"><i class="far fa-comment-dots"></i></a> 
