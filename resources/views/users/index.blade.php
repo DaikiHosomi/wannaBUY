@@ -88,7 +88,7 @@
                                             
                 
                                         <div class="row">
-                                            @foreach($userProducts as $product)
+                                            @foreach($user->products as $product)
                                                 <div class="col-md-4">
                                                 <div class="product-box post-card card float-left my-2">
                 
@@ -170,7 +170,7 @@
                                                 
                                                 </div>
                                                 @endforeach
-                                            {{ $userProducts->links() }}   
+                                           
                                         </div>                                               
                                         </div>
                                     </div>
@@ -186,7 +186,7 @@
                                     
                                     <div class="card-body">
                     
-                                        @foreach($userPosts as $post)
+                                        @foreach($user->posts as $post)
                                         <div class="post-card">
                                             <div class="post-card-body">
                                             
@@ -200,7 +200,7 @@
                                         </div>
                                         @endforeach
 
-                                        {{ $userPosts->links() }}   
+                                        
                                       
                                     </div>
                                  

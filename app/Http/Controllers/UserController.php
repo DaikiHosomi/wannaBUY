@@ -21,17 +21,13 @@ class UserController extends Controller
     {
         
         $user = Auth::user();
-        $userPosts = Post::where('user_id', Auth::user()->id)->latest('published_at')->paginate(5);
-        $userProducts = Product::where('user_id', Auth::user()->id)->latest('published_at')->paginate(6);
-
+        
       
 
         $user->load('products','posts');
 
         return view('users.index', [
             'user' => $user,
-            'userPosts' => $userPosts,
-            'userProducts' => $userProducts,
         ]);
 
     }

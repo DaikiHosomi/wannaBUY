@@ -221,3 +221,8 @@ img.nav-image {
     
 }
 
+
+img {
+    object-fit: cover;
+}
+

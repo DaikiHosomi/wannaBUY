@@ -142,7 +142,7 @@
 
                 <div class="row">
                     <div class="col-md-4">
-                        <a class="btn btn-light m-1" style="border: 3px solid #A9A9A9; border-radius: 10px;" onclick="history.back()">
+                    <a class="btn btn-light m-1" style="border: 3px solid #A9A9A9; border-radius: 10px;" href="{{ route('products.index') }}">
                             back<i class="fas fa-undo-alt"></i>
                         </a>   
                     </div>
