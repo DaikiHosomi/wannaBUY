@@ -216,7 +216,14 @@ img {
 }
 
 
+
+
+
 @media screen and (max-width:639px) {
+    img {
+        object-fit: cover;
+    }
+    
 
     .card-body {
         width:100%;
@@ -244,6 +251,49 @@ img {
     .post-create-text{
         font-size: 10px;
     }
+
+
+    .post-comment-icon {
+        float: right;
+    }
+
+    .post-name {
+        font-size: 5px;
+    }
+
+    .comment-icon {
+        width:40%;
+        height:80%
+
+    }
+
+    .post-title {
+        font-size: 13px;
+    }
+
+    .post-time {
+        font-size: 2px;
+    }
+
+    .post-image {
+        width:20%;
+        height:50%;
+    }
+
+    h5.button {
+        font-size: 10px;
+    }
+
+    a.button {
+        font-size: 10px;
+    }
+
+    div.card.p-2 {
+        height: 100%;
+    }
+    
+    
+
 
     }
 

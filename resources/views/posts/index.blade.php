@@ -4,7 +4,7 @@
 <div class="head-container container">
     <div class="top-card-header text-center mb-3">TimeLine</div>
         <div class="row justify-content-center">
-            <div class="card col-md-10">
+            <div class="card col-sm-10 col-md-10">
                 
                     <div class="col text-center m-2">
                         <a type="submit" class="post-button" href="{{ route('posts.create') }}"><i class="fas fa-hand-point-right"></i>投稿してみる<i class="fas fa-hand-point-left"></i></a>
@@ -17,21 +17,43 @@
                         </div>
                     @endif
 
-                    @foreach($posts as $post)
-                    <div class="post-card" >
-                        <div class="post-card-body">
-                        
-                        <h5 class="card-title"><img src="{{$post->user->image}}" alt="" class="img-responsive img-thumbnail" style="height: 50px; width:50px;">
-                            <p class="input-text post-time" style="float:right;"> {{ $post->published_at }}</p>
-                                <a href="{{ route('users.show', $post->user_id)}}" class="post-name px-3">
-                                {{ $post->user->name }}</a></h5>
-                             <a href="{{ route('posts.show', $post->id) }}" class="btn btn-secondary" style="float:right;"><i class="far fa-comment-dots"></i></a> 
-                            <h5 class="post-title card-title">{{ $post->title }}</h5>
-                        </div>
-                    </div>
-                    @endforeach
+                   
+                  
+                       
+                   
+                        @foreach($posts as $post)
+                       <div class="card my-1" style="background-color:rgba(249, 244, 235, 1); border: 3px solid gainsboro;">
+                            <div class="row justify-content-center">
+                                <div class="col-6">
+                                    <img src="{{$post->user->image}}" alt="" class="post-image img-responsive img-thumbnail mt-3 p-0" style="height: 35px; width: 35px;">
+                                    <a href="{{ route('users.show', $post->user_id)}}" class="post-name px-3">
+                                        {{ $post->user->name }}</a>
+                                </div>
+
+                                <div class="col-5 text-right mt-3">
+                                    <a href="{{ route('posts.show', $post->id) }}" class="comment-icon btn btn-secondary"><i class="far fa-comment-dots"></i></a> 
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-6">
+                                    <h5 class="post-title card-title">{{ $post->title }}</h5>
+                                </div>
+                                <div class="col-5 text-right">
+                                    <p class="post-time" style="float:right;"> {{ $post->published_at }}</p>
+                                
+                                </diV>  
+                            </diV>  
+
+                            
+                        </div>                    
+                 @endforeach
+                
+                {{ $posts->links() }}
+
+
+
+                   </div>
                     
-                    {{ $posts->links() }}
                 
                 </div>
            

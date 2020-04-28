@@ -2,17 +2,15 @@
 
 @section('content')
 
-<div class="card-body">
-    @if (session('status'))
+
+    <div class="head-container container">
+        @if (session('status'))
         <div class="alert alert-warning" role="alert">
             {{ session('status') }}
         </div>
-    @endif
-
-    <div class="head-container">
+        @endif
         <div class="row justify-content-center">
-            <div class="col-md-11">
-                <div class="post-top card">
+            <div class="col-md-12">
                     <div class="top-card-header text-center">CommentPage </div>
                     <div class="post-card my-3" >
                         <div class="post-card-body">
@@ -59,22 +57,14 @@
                         
                         </div>
                     </div>
-                </div>
+                
             </div>
         </div> 
-    </div> 
-        
-           
-
-
-        
-        
     
+        
 
-            <div>
-                <div class="head-container">
                     <div class="row justify-content-center">
-                        <div class="col-md-10">
+                        <div class="col-11">
                               @foreach($post->postComments as $postComment)
                                 <div class="card">
                                     <div class="post-comment-body"> 
@@ -96,11 +86,11 @@
                                                     @endif
                                     </div>
                                 </div>         
-                            @endforeach
+                                @endforeach
                         </div> 
                     </div> 
-                </div> 
-            </div> 
+ </div> 
+           
   
     
 @endsection
