@@ -223,10 +223,10 @@ img {
     }
    
     /*スマホ用のcssを記述*/
-    /* .input-text {
-        font-size: 1px;
+    .input-text {
+        font-size: 10px;
         text-align: center;
-    } */
+    }
 
     .product-step {
         width:100%;
