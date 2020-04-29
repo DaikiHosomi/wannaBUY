@@ -137,20 +137,23 @@
     border: 3px solid gainsboro;
     color: white;
     border-radius: 25px;  
+    width: 75%;
 }
 
 .unfavorite-button {
     background-color:white;
     border: 3px solid gainsboro;
     color: black;
-    border-radius: 25px;  
+    border-radius: 25px; 
+    width: 75%;
 }
 
 .favorite-button {
     background-color:#003300;;
     border: 5px solid gainsboro;
     color: white;
-    border-radius: 25px;  
+    border-radius: 25px; 
+    width: 75%; 
 }
 
 
@@ -188,10 +191,6 @@
     margin-left: 10px;
 }
 
-.search-form {
-    margin-left: 200px;
-}
-
 .profile {
     background-image: url("https://cdn.pixabay.com/photo/2015/12/03/08/50/paper-1074131_1280.jpg");
     background-color:rgba(255,255,255,0.4);
@@ -210,6 +209,22 @@ img.nav-image {
 img {
     object-fit: cover;
 }
+
+.product-card-body img {
+    height: 200px;
+    width: 100%;
+
+}
+
+
+.search-mark {
+    position: absolute;
+    top: 30px;
+    left: 170px;
+}
+
+
+
 
 
 
@@ -254,7 +269,7 @@ img {
     }
 
     .post-name {
-        font-size: 5px;
+        font-size: 10px;
     }
 
     .comment-icon {
@@ -294,10 +309,114 @@ img {
         width: 100%;
     }
 
-    .products-body {
+    .products-create-body {
         padding: 5px;
     }
+
+
+    .product-card-body img {
+        height: 80px;
+        width: 90%;
     
+    }
+
+
+
+
+    .search-mark {
+        width: 35px;
+        position: absolute;
+        top: 30px;
+        left: 115px;
+    }
+
+    .head-product-button {
+        color: white;
+        width: 55px;
+        height: 55px;
+        line-height: 55px;
+        background-color:#003300;
+        padding-left: 0px;
+        border-radius: 10px;
+        font-size: 5px;
+       
+    }
+    
+    
+    .head-buyer-button {
+        color: white;
+        width: 55px;
+        height: 55px;
+        line-height: 55px;
+        background-color:#FF8C00;
+        border-radius: 10px;
+        font-size: 5px; 
+    }
+
+    .search-text {
+        font-size: 8px;
+    }
+
+
+    .search-form {
+        text-align: center;
+    }
+
+    .head-button {
+        margin-left: 20px;
+        margin-top: 18px;
+    }
+
+    .head-button2 {
+
+        margin-top: 18px;
+    }
+
+    .mini-card {
+        padding: 0px 0px;
+    }
+
+    .product-card-body {
+        width: 120px;
+    }
+
+    .sold-button {
+        font-size: 5px;
+        width: 80px;
+
+    }
+
+    .unfavorite-button {
+       
+        font-size: 5px;
+        width: 100px;
+    }
+    
+    .favorite-button {
+       
+        font-size: 5px;
+        width: 100px;
+    }
+    
+
+    .product-card-body {
+        border: 3px solid gainsboro;
+    }
+
+    .product-box {
+        height: 100%;
+        background-color:rgba(249, 244, 235, 1);
+    }
+
+    .product-category {
+        font-size: 7px;
+    }
+
+    .product-name-index {
+        font-size: 20px;
+        color:black;
+    }
+
     
 
 

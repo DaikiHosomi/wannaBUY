@@ -4,10 +4,10 @@
 
 <div class="head-container container">
     <div class="top-card-header text-center">Home</div>
-        <div class="card-body">
+        <div class="mini-body card-body">
             
-                <div class="row">
-                    <div class="col-md-8">
+                <div class="row mb-2">
+                    <div class="col-6">
                        
                         
                         <div id="custom-search-input">
@@ -15,24 +15,26 @@
                                 <form action="{{ route('products.search') }}" method="get" class="search-form">
                                     {{ csrf_field() }}
                                     
-                                    <label for="search" class="font-weight-bold">商品検索(１単語で行う）</label>
-                                    <input type="text" class="form-control input-lg w-100" placeholder="入力してください" name="search" size="25" maxlength="10">
+                                    <label for="search" class="search-text font-weight-bold">商品検索(１単語で行う）</label>
+                                    <input type="text" class="form-control input-lg w-100" placeholder="探す" name="search" size="25" maxlength="10">
                                     
                                     <span class="input-group-btn">
-                                        <button class="btn btn-secondary" type="submit" style="position: absolute;top: 30px;left: 375px;">
+                                        <button class="search-mark btn btn-secondary" type="submit">
                                             <i class="fas fa-search"></i>
                                         </button>
                                     </span>
+                                   
                                 </form> 
                             </div> 
                         </div>
                     </div>
+                    
 
-                    <div class="col-md-2">
+                    <div class="head-button col-2">
                         <a type="submit" class="head-product-button text-center" href="{{ route('products.create') }}">出品</a>                                                     
                     </div>
 
-                    <div class="col-md-2">
+                    <div class="head-button2 col-2">
                         <a type="submit" class="head-buyer-button text-center" href="{{ route('productComments.index') }}">交渉依頼確認</a>                                                     
                     </div>
               
@@ -50,7 +52,7 @@
                     <div class="card bg-light">
                         
 
-                        <div class="card-body  text-center">
+                 <div class="card-body  text-center p-0">
                             
 
                             @if (session('status'))
@@ -58,16 +60,18 @@
                                     {{ session('status') }}
                                 </div>
                             @endif
+                    <div class="container">
                         <div class="row">
                             @foreach($products as $product)
-                             <div class="card col-md-4">
-                                <div class="product-box post-card card float-left my-3">
+                            <a href="{{ route('products.show', $product->id) }}">
+                                <div class="mini-card card col-6 col-md-4">
+                                 <div class="product-box post-card card float-left my-3">
 
-                            
+
                                     @foreach($product->productImages as $productImage)
                                     @if ($loop->first)
                                     <div class="product-card-body bg-light"> 
-                                    <img src="{{ $productImage->product_image }}" alt="" class="product-image img-responsive img-thumbnail w-100" style="height: 200px; objective-fit:cover;">
+                                    <img src="{{ $productImage->product_image }}" alt="" class="product-image img-responsive img-thumbnail">
                                     </div>                  
                                     @endif
                                     @endforeach
@@ -75,8 +79,8 @@
 
 
                                     @if($product->sold == '1')
-                                    <div class="text-center m-1">
-                                        <button class="sold-button w-75 font-weight-bold"> <i class="fas fa-praying-hands mr-2"></i> SoldOut <i class="fas fa-praying-hands ml-2"></i></button>
+                                    <div class="text-center mt-2">
+                                        <button class="sold-button w-75 font-weight-bold"> <i class="fas fa-praying-hands mr-2"></i> SoldOut</button>
                                     </div>
                                     @else
 
@@ -90,7 +94,7 @@
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
                                             <div class="text-center mt-2">
-                                            <button type="submit" class="favorite-button center-block">”Yes,wannaBUY!” <i class="fas fa-thumbs-up"></i></button>
+                                                <button type="submit" class="favorite-button center-block">Yes,wannaBUY!<i class="fas fa-thumbs-up d-none d-sm-block"></i></button>
                                             </div>
                                         </form>
 
@@ -99,7 +103,7 @@
                                         <form action="{{  route('favorites.favorite', $product->id) }}" method = "POST">
                                             {{ csrf_field() }}
                                             <div class="text-center mt-2">
-                                            <button type="submit" class="unfavorite-button center-block">”wannaBUY ???” <i class="far fa-thumbs-up"></i></button>
+                                                <button type="submit" class="unfavorite-button center-block">wannaBUY ??? <i class="far fa-thumbs-up d-none d-sm-block"></i></button>
                                             </div>
                                         </form>
 
@@ -109,8 +113,8 @@
 
                     
                                     <div class="card-body text-center p-2"> 
-                                        <h4 class="card-text pt-1  font-weight-bold bg-light">{{ $product->product_name }}</h4>
-                                        <p class="product-category card-text">カテゴリー:
+                                        <h4 class="product-name-index card-text pt-1  font-weight-bold bg-light">{{ $product->product_name }}</h4>
+                                        <p class="product-category card-text">
                                             <a href="{{ route('products.index', ['product_category_id' => $product->product_category_id]) }}">
                                                 {{ $product->productCategory->name }}</a>
                                             </p>
@@ -119,7 +123,7 @@
                                         <div class="row">
 
                                             <div class="col-md-6">
-                                                <div class="text-left" style="height: 30px;">
+                                                <div class="text-left d-none d-sm-block" style="height: 30px;">
                                                     <a href="{{ route('products.show', $product->id) }}" class="product-detail">詳細画面へ<i class="far fa-hand-point-right"></i></a>
                                                 </div>    
                                             </div>
@@ -144,8 +148,11 @@
                                 </div>
                                
                              </div>
+                            </a>
                              @endforeach
                         </div>
+                    </div>
+                        
                                
                             
                         </div>

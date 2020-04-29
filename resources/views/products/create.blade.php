@@ -12,7 +12,7 @@
     @endif
 
     <div class="card">
-        <div class="products-body card-body">
+        <div class="products-create-body card-body">
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
