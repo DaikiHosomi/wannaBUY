@@ -12,8 +12,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                     <div class="top-card-header text-center">CommentPage </div>
-                    <div class="post-card my-3" >
-                        <div class="post-card-body">
+                    <div class="post-card-body  my-3" >
                             <h5 class="card-title"><img src="{{$post->user->image}}" alt="" class="img-responsive img-thumbnail" style="height: 50px; width:50px;">
                                 <p class="post-time" style="float:right;"> {{ $post->published_at }}</p>
                                     <a href="{{ route('users.show', $post->user_id)}}" class="post-name px-3">
@@ -55,7 +54,7 @@
                                 <i class="fas fa-undo"></i>
                                 </a>
                         
-                        </div>
+                       
                     </div>
                 
             </div>
@@ -64,7 +63,7 @@
         
 
                     <div class="row justify-content-center">
-                        <div class="col-11">
+                        <div class="col-11 mt-4">
                               @foreach($post->postComments as $postComment)
                                 <div class="card">
                                     <div class="post-comment-body"> 

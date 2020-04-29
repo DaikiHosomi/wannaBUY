@@ -50,7 +50,7 @@
                     <div class="card bg-light">
                         
 
-                        <div class="card-body text-center">
+                        <div class="card-body  text-center">
                             
 
                             @if (session('status'))

@@ -45,8 +45,6 @@
 }
 
 
-
-
 .post-card-header {
     text-align: center;
     font-size: 20px;
@@ -55,10 +53,6 @@
     background-color: wheat;
 }
 
-.post-card {
-    height: auto;
-    border: 2px solid gainsboro;
-}
 
 .post-name {
     color: black;
@@ -86,8 +80,10 @@
 .post-card-body {
   padding: 10px 20px;
   background-color:rgba(249, 244, 235, 1);
-  min-height: 150px;
-  height: auto;
+  /* min-height: 190px;
+  height: auto; */
+  height: 85%;
+  border: 2px solid gainsboro;
 }
 
 
@@ -272,10 +268,11 @@ img {
     }
 
     .post-time {
-        font-size: 5px;
+        font-size: 8px;
     }
 
     .post-image {
+        padding-left: 5px;
         width:20%;
         height:50%;
     }
@@ -290,6 +287,15 @@ img {
 
     div.card.p-2 {
         height: 100%;
+    }
+
+    .post-index {
+        padding: 5px 0px;
+        width: 100%;
+    }
+
+    .products-body {
+        padding: 5px;
     }
     
     

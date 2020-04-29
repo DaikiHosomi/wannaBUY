@@ -3,8 +3,7 @@
 @section('content')
 <div class="head-container container">
     
-    <div class="top-card-header text-center">Product's registration</div>
-    <div class="card-body">
+    <div class="top-card-header text-center mb-2">Product's registration</div>
 
     @if (session('status'))
         <div class="alert alert-success" role="alert">
@@ -13,7 +12,7 @@
     @endif
 
     <div class="card">
-        <div class="card-body">
+        <div class="products-body card-body">
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
