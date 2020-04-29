@@ -60,7 +60,7 @@
                             @endif
                         <div class="row">
                             @foreach($products as $product)
-                             <div class="col-xs-2 col-md-4">
+                             <div class="card col-md-4">
                                 <div class="product-box post-card card float-left my-3">
 
                             
@@ -107,11 +107,7 @@
                                         @endauth
                                     @endif
 
-                            
-
-
-
-
+                    
                                     <div class="card-body text-center p-2"> 
                                         <h4 class="card-text pt-1  font-weight-bold bg-light">{{ $product->product_name }}</h4>
                                         <p class="product-category card-text">カテゴリー:
@@ -136,16 +132,8 @@
                                                 
                                             </div>
 
-
-
-                                        </div>
-
-                                       
-                                       
+                                        </div>                        
                                     </div>
-
-
-
 
                                 
                                     <input type="hidden" name="product_condition_id" value="{{ $product->productCondition->product_condition }}">

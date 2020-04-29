@@ -16,8 +16,6 @@
         <!-- Styles -->
         <style>
            
-
-        
         </style>
     </head>
 
@@ -107,7 +105,7 @@
 
                     <div class="row my-5">
                         <div class="col-md-6">
-                            <img src="https://cdn.pixabay.com/photo/2017/08/06/22/12/books-2596900_1280.jpg"  class="image-list img-fluid"  alt="">
+                            <img src="https://cdn.pixabay.com/photo/2017/08/06/22/12/books-2596900_1280.jpg"  class="d-none d-sm-block image-list img-fluid"  alt="">
                         </div>
                         <div class="col-md-6">
                             <div class="way-box box mt-5">
