@@ -27,7 +27,7 @@
                             @if(Auth::user()->id === $post->user_id)
                             <!-- Button trigger modal -->
                             <button type="button" class="btn-light float-right" data-toggle="modal" data-target="#exampleModalCenter">
-                                <i class="fas fa-trash-alt fa-2x"></i>
+                                <i class="fas fa-trash-alt "></i>
                             </button>
                             
                             <!-- Modal -->
@@ -51,8 +51,8 @@
                                 </div>
                             </div>
                             @endif
-                            <a href="{{ route('posts.index') }}" class="btn btn-light float-right mr-2">
-                                <i class="fas fa-undo-alt"></i>
+                            <a href="{{ route('posts.index') }}" class="btn btn-light float-right pt-1  mr-2">
+                                <i class="fas fa-undo"></i>
                                 </a>
                         
                         </div>

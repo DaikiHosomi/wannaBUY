@@ -24,21 +24,21 @@
                         @foreach($posts as $post)
                        <div class="card my-1" style="background-color:rgba(249, 244, 235, 1); border: 3px solid gainsboro;">
                             <div class="row justify-content-center">
-                                <div class="col-6">
+                                <div class="col-8">
                                     <img src="{{$post->user->image}}" alt="" class="post-image img-responsive img-thumbnail mt-3 p-0" style="height: 35px; width: 35px;">
                                     <a href="{{ route('users.show', $post->user_id)}}" class="post-name px-3">
                                         {{ $post->user->name }}</a>
                                 </div>
 
-                                <div class="col-5 text-right mt-3">
+                                <div class="col-4 text-right mt-3">
                                     <a href="{{ route('posts.show', $post->id) }}" class="comment-icon btn btn-secondary"><i class="far fa-comment-dots"></i></a> 
                                 </div>
                             </div>
                             <div class="row justify-content-center">
-                                <div class="col-6">
+                                <div class="col-10">
                                     <h5 class="post-title card-title">{{ $post->title }}</h5>
                                 </div>
-                                <div class="col-5 text-right">
+                                <div class="col-2 text-right">
                                     <p class="post-time" style="float:right;"> {{ $post->published_at }}</p>
                                 
                                 </diV>  
