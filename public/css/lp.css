@@ -3,8 +3,6 @@
     color: white; 
     font-size: 60px;
     border-radius: 20px;
-    padding: 20px 60px;
-    margin-right: 50px;
     margin-bottom: 100px;
     opacity: 1;
 
@@ -17,8 +15,8 @@
 
 
 header.masthead {
-    width: 1440px;
-    height: 600px;
+    width: 100%;
+    height: 200%;
     text-align: center;
     background-image: url("https://cdn.pixabay.com/photo/2016/01/20/11/54/book-wall-1151405_1280.jpg");
     background-color:rgba(255,255,255,0.6);
@@ -38,18 +36,18 @@ header.masthead {
     color: #091026;
     font-size: 170px;
     text-align: center;
-    padding: 100px;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 section.features {
     background: rgba(181, 179, 182, 0.25);
-    width: 1440px;
-    height: 1050px;
+    width: 100%;
+    height: 950px;
 }
 
 
 .feature-title {
-    margin: 0 auto;
     text-align: center;
     font-family:'Ubuntu', sans-serif;
     margin-top:100px;
@@ -58,7 +56,6 @@ section.features {
 }
 
 .feature-heading {   
-    margin: 0 auto;
     text-align: center;
     font-family: 'Sawarabi Gothic', sans-serif;
     font-size: 50px;
@@ -71,15 +68,15 @@ section.features {
     text-align: center;
     font-size: 30px;
     font-family:'Sawarabi Gothic', sans-serif;
-    padding-top: 20px;
     font-weight: bold;
 }
 
 .feature-box {
-    width: 500px;
-    height: 200px;
+    width: 100%;
+    height: 75%;
     background-color:rgba(220, 214, 207, 0.4);
     border-radius: 40px;
+    margin: 50px 0px;
 }
 
 
@@ -93,7 +90,6 @@ section.features {
 
 .feature-text {
     color:#01436F;
-    padding: 50px;
     text-align:justify-all; 
     font-size: 15px;
     font-family:'Sawarabi Gothic', sans-serif;
@@ -104,12 +100,11 @@ section.features {
 
 section.way-to-use {
     background: rgba(229, 229, 229, 0.44);
-    width: 1440px;
-    height: 1610px; 
+    width: 100%;
+    height: 1400px; 
 }
 
 .way-title {
-    margin: 0 auto;
     text-align: center;
     font-family:'Ubuntu', sans-serif;
     font-size: 50px;
@@ -126,15 +121,15 @@ section.way-to-use {
 }
 
 img.image-list {
-    width:500px;
-    height: 400px;
+    width: 100%;
+    height: 90%;
     border-radius: 40px;
 }
 
 
 .way-box {
-    width: 500px;
-    height: 300px;
+    width: 100%;
+    height: 100%;
     background-color:rgba(220, 214, 207, 0.4);
     border-radius: 40px;
 }
@@ -159,8 +154,8 @@ img.image-list {
     font-weight: bold;
 }
 section.last-page {
-    width: 1440px;
-    height: 600px;
+    width: 100%;
+    height: 100%;
     text-align: center;
     background-image: url("https://cdn.pixabay.com/photo/2016/01/20/11/54/book-wall-1151405_1280.jpg");
     background-color:rgba(255,255,255,0.6);
@@ -236,6 +231,86 @@ section.last-page {
   .btn-square-so-register:active {
     top: 3px;
     box-shadow: none;
+  }
+
+  @media screen and (max-width:639px) {
+
+    .intro-heading {
+        font-size:65px;
+        padding-top:50px;
+        padding-bottom:50px;
+    }
+
+    .btn-square-so-login { 
+        width: 65%;
+        font-size:20px;
+        padding:5px 10px;
+        margin-bottom:50px;
+    }
+
+    .btn-square-so-register {
+        width: 65%;
+        font-size:20px;
+        padding:5px 10px;
+        margin-bottom:50px;
+    }
+    section.features {
+        height: 1000px;
+    }
+
+    .feature-title {
+        margin-top: 50px;
+        font-size:38px;
+    }
+
+    .feature-heading {
+        font-size:18px;
+    }
+
+    .feature {
+        font-size:20px; 
+    }
+
+    .feature-list {
+        font-size:20px; 
+   }
+
+   .feature-text {
+        font-size:10px; 
+   }
+
+   .feature-box {
+       margin: 20px 0px;
+   }
+
+   .way {
+    font-size: 20px;
+}
+
+  .way-text {
+    font-size: 10px;
+  }
+
+  .way-item {
+    font-size:20px; 
+  }
+
+  section.way-to-use {
+      height:875px;
+  }
+
+  .last-heading{
+      font-size: 38px;
+      margin-top: 75px;
+  }
+
+  .last-text  {
+      font-size: 10px;
+  }
+
+
+
+
   }
 
 
