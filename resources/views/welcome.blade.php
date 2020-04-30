@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>wannaBUY</title>
 
         <!-- Fonts -->
         <link rel="stylesheet" href="<?php echo asset('css/lp.css')?>" type="text/css"> 
