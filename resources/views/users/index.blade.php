@@ -202,12 +202,12 @@
                                                             {{ $post->user->name }}</a>
                                                     </div>
                     
-                                                    <div class="col-4 text-right mt-3">
-                                                        <a href="{{ route('posts.show', $post->id) }}" class="comment-icon btn btn-secondary"><i class="far fa-comment-dots"></i></a> 
+                                                    <div class="col-3 text-right  mt-3">
+                                                        <a href="{{ route('posts.show', $post->id) }}" class="btn btn-secondary btn-sm"><i class="comment-icon far fa-comment-dots"></i></a> 
                                                     </div>
                                                 </div>
                                                 <div class="row justify-content-center">
-                                                    <div class="col-12 col-md-10">
+                                                    <div class="col-9">
                                                         <h5 class="post-title card-title">{{ $post->title }}</h5>
                                                     </div>
                                                     <div class="col-2 text-right">
