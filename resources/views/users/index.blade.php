@@ -19,7 +19,7 @@
              </div>
  
             <div class="row justify-content-center">
-                <div class="col-md-8">
+                <div class="profile-body col-md-8">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -38,19 +38,19 @@
                     {{-- <h1>{{$user->name}}</h1> --}}
 
                  @if(isset($user->department))
-                    <div class="profile row justify-content-center">
+                    <div class="profile row justify-content-center" style="margin:0px;">
                         @if(isset($user->image))
-                        <div class="col-md-5 text-center">
-                            <img src="{{ $user->image }}" alt="" class="img-responsive img-thumbnail m-4 p-0" style="min-height: 200px; height-auto; objective-fit: cover; border-radius: 25%;">
+                        <div class="col-12 col-md-5 text-center">
+                            <img src="{{ $user->image }}" alt="" class="img-responsive img-thumbnail m-4 p-0" style="height: 75%; width: 85%;objective-fit: cover; border-radius: 25%;">
                         </div>
                         @else
-                        <div class="col-md-5">
+                        <div class="col-12 col-md-5">
                             <a class="btn btn-secondary m-4 p-0 w-100 h-75 text-center" style="border-radius: 25%; color:white; line-height:110px;">画像が登録されていません</a>
                         </div>
                         @endif
 
 
-                        <div class="col-md-7 my-4">
+                        <div class="profile-text col-md-7 my-2">
                             <div class="card-body text-center p-0 my-1">
                                 <h3 class="font-weight-bold ">{{$user->name}}</h3>
                                 <h5>{{$user->department }}・{{$user->grade}}
@@ -84,20 +84,26 @@
                                     <div class="card bg-light">
                                         
                 
-                                        <div class="card-body text-center">
+                                 <div class="card-body text-center p-0">
                                             
                 
+                                            @if (session('status'))
+                                                <div class="alert alert-success" role="alert">
+                                                    {{ session('status') }}
+                                                </div>
+                                            @endif
+                                    <div class="container">
                                         <div class="row">
                                             @foreach($user->products as $product)
-                                                <div class="col-md-4">
-                                                <div class="product-box post-card card float-left my-2">
+                                                <div class="mini-card col-6 col-md-4">
+                                                <div class="product-box post-card card float-left">
                 
                                             
                                                     @foreach($product->productImages as $productImage)
                                                     @if ($loop->first)
                                                     <div class="product-card-body bg-light"> 
-                                                    <img src="{{ $productImage->product_image }}" alt="" class="product-image img-responsive img-thumbnail w-100" style="height: 200px; objective-fit:cover;">
-                                                    </div>                  
+                                                    <img src="{{ $productImage->product_image }}" alt="" class="product-image img-responsive img-thumbnail">
+                                                    </div>                
                                                     @endif
                                                     @endforeach
                 
@@ -137,8 +143,8 @@
                                                     @endif
                 
                                                     <div class="card-body text-center p-2"> 
-                                                        <h4 class="card-text pt-1  font-weight-bold bg-light">{{ $product->product_name }}</h4>
-                                                        <p class="product-category card-text">カテゴリー:
+                                                        <h4 class="product-name-index card-text pt-1  font-weight-bold bg-light">{{ $product->product_name }}</h4>
+                                                        <p class="product-category card-text">
                                                             <a href="{{ route('products.index', ['product_category_id' => $product->product_category_id]) }}">
                                                                 {{ $product->productCategory->name }}</a>
                                                             </p>
@@ -147,7 +153,7 @@
                                                         <div class="row">
                 
                                                             <div class="col-md-6">
-                                                                <div class="text-left" style="height: 30px;">
+                                                                <div class="text-left  d-none d-sm-block" style="height: 30px;">
                                                                     <a href="{{ route('products.show', $product->id) }}" class="product-detail">詳細画面へ<i class="far fa-hand-point-right"></i></a>
                                                                 </div>    
                                                             </div>
@@ -176,7 +182,7 @@
                                     </div>
                                 </div>
                             </div>
-                        
+                         </div>
                         </div>
 
 

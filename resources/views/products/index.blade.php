@@ -118,7 +118,7 @@
                                             <a href="{{ route('products.index', ['product_category_id' => $product->product_category_id]) }}">
                                                 {{ $product->productCategory->name }}</a>
                                             </p>
-                                        <h5 class="product-price-index  card-title font-weight-bold bg-light"><i class="fas fa-yen-sign mr-1"></i>{{ $product->price }}</h5>
+                                        <h5 class="product-price-index card-title font-weight-bold bg-light"><i class="fas fa-yen-sign mr-1"></i>{{ $product->price }}</h5>
 
                                         <div class="row">
 
