@@ -138,6 +138,8 @@
     color: white;
     border-radius: 25px;  
     width: 75%;
+    padding-top: 13px;
+    padding-bottom: 13px;
 }
 
 .unfavorite-button {
@@ -496,6 +498,11 @@ img {
 
     .profile-text {
         margin-top:10px;
+    }
+
+    .product-username-index {
+        text-align: left;
+       font-size: 10px;
     }
 
 

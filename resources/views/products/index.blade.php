@@ -128,9 +128,9 @@
                                                 </div>    
                                             </div>
 
-                                            <div class="col-12 col-md-6 text-right">
+                                            <div class="col-12 col-md-6 mt-2">
                                                 <p class="card-text" style="z-index: 5;">
-                                                    <a href="{{ route('users.show', $product->user_id)}}" >
+                                                    <a href="{{ route('users.show', $product->user_id)}}" class="product-username-index">
                                                         {{ $product->user->name }}</a>　<img src="{{$product->user->image}}" alt="" class="img-responsive img-thumbnail mx-2" style="height: 30px; width:30px;">
                                                     </p>
                                                 
