@@ -68,7 +68,7 @@
                             </div>
                         </div>  
                         
-                    <p class="text-right my-3">出品日時:{{ $product->published_at }}</p>
+                    <p class="product-time text-right my-3">出品日時:{{ $product->published_at }}</p>
                     </div>                  
                                   
                     
@@ -106,7 +106,7 @@
                 </div>   
                 
                 
-                <div class="row">
+                <div class="row ">
                     <div class="col-md-6 text-center">
                         <h2 class="mt-3 font-weight-bold bg-white"> <i class="fas fa-yen-sign mr-1"></i>{{ $product->price }}</h2>
                     </div>
@@ -119,7 +119,7 @@
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
                             <div class="text-center">
-                                <button type="submit" class="favorite-button center-block">”Yes,wannaBUY!” <i class="fas fa-thumbs-up"></i></button>
+                                <button type="submit" class="favorite-button center-block">Yes,wannaBUY!<i class="fas fa-thumbs-up"></i></button>
                             </div>
                         </form>
 
@@ -128,7 +128,7 @@
                         <form action="{{  route('favorites.favorite', $product->id) }}" method = "POST">
                             {{ csrf_field() }}
                             <div class="text-center">
-                            <button type="submit" class="unfavorite-button center-block">”wannaBUY ???” <i class="far fa-thumbs-up"></i></button>
+                            <button type="submit" class="unfavorite-button center-block">wannaBUY ??? <i class="far fa-thumbs-up"></i></button>
                             </div>
                         </form>
 
@@ -138,24 +138,32 @@
                     </div>
                 </div>
 
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="text-center mb-2">
+                            <button class="product-introduction font-weight-bold" style="border: 2px solid gainsboro;">商品説明</button>
+                        </div>
+
+                        <div class="card-body bg-white" style="border: 3px solid gainsboro;">                        
+                            <p lass="card-text">{{ $product->introduction }}</p>
+                        </div>
+                    </div>   
+                </div>
+
 
 
                 <div class="row">
-                    <div class="col-md-4">
-                    <a class="btn btn-light m-1" style="border: 3px solid #A9A9A9; border-radius: 10px;" href="{{ route('products.index') }}">
+                    <div class="col-6 col-md-6 mt-2">
+                    <a class="back-button btn btn-light" style="border: 3px solid #A9A9A9; border-radius: 10px;" href="{{ route('products.index') }}">
                             back<i class="fas fa-undo-alt"></i>
                         </a>   
                     </div>
-                    <div class="col-md-4">
-                        <div class="text-center mt-2">
-                            <button class="font-weight-bold" style="border: 2px solid gainsboro;">商品説明</button>
-                        </div>
-                    </div>
-                    <div class="col-md-4 text-right">
+                
+                    <div class="col-6 col-md-6 text-right mt-2">
                         @auth
                             @if(Auth::user()->id === $product->user_id )                             
                                 <!-- Button trigger modal -->
-                                <button type="button" class="product-delete-button btn-light" data-toggle="modal" data-target="#exampleModalCenter" style="border: 2px solid #778899; border-radius: 10px;">
+                                <button type="button" class="product-delete-button product-delete-button btn-light" data-toggle="modal" data-target="#exampleModalCenter" style="border: 2px solid #778899; border-radius: 10px;">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
                                 <!-- Modal -->
@@ -177,11 +185,13 @@
                                         </div>
                                     </div>
                                     </div>
-                                </div> 
-
+                                </div>
+                           
                                 @if($product->sold == '')
-                                    <a href="{{ route('products.edit', $product->id) }}" class="btn btn-light" style="border: 2px solid #4682B4; border-radius: 10px;"><i class="far fa-edit"></i></a> 
+                                    <a href="{{ route('products.edit', $product->id) }}" class="product-edit-button btn btn-light float-left;" style="border: 2px solid #4682B4; border-radius: 10px;"><i class="far fa-edit"></i></a> 
                                 @endif
+                            
+                                
                             @endif 
                         @endauth 
 
@@ -189,13 +199,7 @@
                 </div>
 
 
-                <div class="row justify-content-center">
-                    <div class="col-md-12">
-                        <div class="card-body bg-white" style="border: 3px solid gainsboro;">                        
-                            <p lass="card-text">{{ $product->introduction }}</p>
-                        </div>
-                    </div>   
-                </div>
+                
 
 
 
@@ -204,14 +208,14 @@
                     <div class="col-md-12 text-center my-4">
                     @auth
                         @if($product->sold == '1')
-                                    <button class="btn btn-danger w-50 font-weight-bold" style="border: 5px solid gainsboro; border-radius: 25px;">
+                                    <button class="sold-out-show btn btn-danger" style="border: 5px solid gainsboro; border-radius: 25px;">
                                         <i class="fas fa-praying-hands mr-2"></i>既に売り切れています<i class="fas fa-praying-hands mr-2"></i></button>
                         @elseif(Auth::user()->id != $product->user_id)
                             <form action="{{ route('buyers.store' ,$product->id) }}" method="POST">
                                 @csrf
                                 <input type="hidden" name="product_id" value="{{ $product->id }}">
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn w-50 font-weight-bold " data-toggle="modal" data-target="#exampleModalCenter" 
+                                <button type="button" class="buyer-button-show" data-toggle="modal" data-target="#exampleModalCenter" 
                                         style="border: 5px solid gainsboro; border-radius: 25px; background-color:#008080; color: white;">
                                     　取引交渉画面へ
                                 </button>

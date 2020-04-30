@@ -113,12 +113,12 @@
 
                     
                                     <div class="card-body text-center p-2"> 
-                                        <h4 class="product-name-index card-text pt-1  font-weight-bold bg-light">{{ $product->product_name }}</h4>
+                                        <h4 class="product-name-index card-text pt-1  font-weight-bold bg-light text-dark">{{ $product->product_name }}</h4>
                                         <p class="product-category card-text">
                                             <a href="{{ route('products.index', ['product_category_id' => $product->product_category_id]) }}">
                                                 {{ $product->productCategory->name }}</a>
                                             </p>
-                                        <h5 class="card-title font-weight-bold bg-light"><i class="fas fa-yen-sign mr-1"></i>{{ $product->price }}</h5>
+                                        <h5 class="product-price-index  card-title font-weight-bold bg-light"><i class="fas fa-yen-sign mr-1"></i>{{ $product->price }}</h5>
 
                                         <div class="row">
 

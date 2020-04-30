@@ -146,6 +146,7 @@
     color: black;
     border-radius: 25px; 
     width: 75%;
+    padding: 6px 0px;
 }
 
 .favorite-button {
@@ -154,12 +155,14 @@
     color: white;
     border-radius: 25px; 
     width: 75%; 
+    padding: 6px 0px;
 }
 
 
 
 .product-category {
-    font-size: 10px;
+    margin-top: 10px;
+    font-size: 15px;
 }
 
 .product-detail {
@@ -211,7 +214,7 @@ img {
 }
 
 .product-card-body img {
-    height: 200px;
+    height: 210px;
     width: 100%;
 
 }
@@ -222,6 +225,19 @@ img {
     top: 30px;
     left: 170px;
 }
+
+.sold-out-show {
+    width: 50%;
+    font-weight:bold;
+}
+
+.buyer-button-show {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 50%;
+    font-weight:bold;
+}
+
 
 
 
@@ -316,7 +332,7 @@ img {
 
     .product-card-body img {
         height: 80px;
-        width: 90%;
+        width: 100%;
     
     }
 
@@ -338,7 +354,7 @@ img {
         background-color:#003300;
         padding-left: 0px;
         border-radius: 10px;
-        font-size: 5px;
+        font-size: 11px;
        
     }
     
@@ -350,7 +366,7 @@ img {
         line-height: 55px;
         background-color:#FF8C00;
         border-radius: 10px;
-        font-size: 5px; 
+        font-size: 11px; 
     }
 
     .search-text {
@@ -381,20 +397,20 @@ img {
     }
 
     .sold-button {
-        font-size: 5px;
+        font-size: 10px;
         width: 80px;
 
     }
 
     .unfavorite-button {
        
-        font-size: 5px;
+        font-size: 10px;
         width: 100px;
     }
     
     .favorite-button {
        
-        font-size: 5px;
+        font-size: 10px;
         width: 100px;
     }
     
@@ -409,15 +425,53 @@ img {
     }
 
     .product-category {
+        margin-top: 10px;
         font-size: 7px;
     }
 
     .product-name-index {
-        font-size: 20px;
+        font-size: 14px;
         color:black;
     }
+    .product-price-index {
+        font-size: 13px;
+    }
 
+    .table {
+        font-size: 10px;
+    }
     
+    .product-time {
+        font-size: 12px;
+    }
+
+    .product-introduction {
+        font-size: 14px;
+    
+    }
+
+    .back-button {
+        font-size: 10px;
+    }
+    .product-delete-button {
+        margin-right: 5px;
+    }
+
+    .sold-out-show {
+        width: 100%; 
+    }
+
+    .buyer-button-show {
+        width: 200px; 
+    }
+
+    .product-edit-button {
+       padding: 2px;
+    }
+    
+    .intro-col {
+        padding-right: 0px;
+    }
 
 
     }
