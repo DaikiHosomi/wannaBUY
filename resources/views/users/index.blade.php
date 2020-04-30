@@ -3,9 +3,9 @@
 @section('content')
 
 <div class="head-container">
-    <div class="top-card-header text-center mb-3">My List</div>
+    <div class="top-card-header text-center mb-3">My Page</div>
     <div class="row justify-content-center">
-        <div class="card col-md-11">
+        <div class="card col-12 col-md-11">
             <div class="text-center my-4">
                 @auth
                     @if(Auth::user()->id === $user->id)
@@ -40,7 +40,7 @@
                  @if(isset($user->department))
                     <div class="profile row justify-content-center" style="margin:0px;">
                         @if(isset($user->image))
-                        <div class="col-12 col-md-5 text-center">
+                        <div class="col-12 col-md-6 text-center">
                             <img src="{{ $user->image }}" alt="" class="img-responsive img-thumbnail m-4 p-0" style="height: 75%; width: 85%;objective-fit: cover; border-radius: 25%;">
                         </div>
                         @else
@@ -78,25 +78,24 @@
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="product">
+                          <div class="container">
 
+                                @if (session('status'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ session('status') }}
+                                </div>
+                            @endif
                             <div class="row justify-content-center">
-                                <div class="col-md-12">
-                                    <div class="card bg-light">
-                                        
+                                <div class="col-md-12 p-0 card bg-light">
+                                <div class="card bg-light">      
                 
                                  <div class="card-body text-center p-0">
-                                            
-                
-                                            @if (session('status'))
-                                                <div class="alert alert-success" role="alert">
-                                                    {{ session('status') }}
-                                                </div>
-                                            @endif
+                                        
                                     <div class="container">
                                         <div class="row">
                                             @foreach($user->products as $product)
-                                                <div class="mini-card col-6 col-md-4">
-                                                <div class="product-box post-card card float-left">
+                                                <div class="card col-6 col-md-4 p-1">
+                                                <div class="product-box post-card card float-left my-3 w-100">
                 
                                             
                                                     @foreach($product->productImages as $productImage)
@@ -111,7 +110,7 @@
                 
                                                     @if($product->sold == '1')
                                                     <div class="text-center m-1">
-                                                        <button class="sold-button w-75 font-weight-bold"> <i class="fas fa-praying-hands mr-2"></i> SoldOut <i class="fas fa-praying-hands ml-2"></i></button>
+                                                        <button class="sold-button w-75 font-weight-bold"> <i class="fas fa-praying-hands mr-2"></i> SoldOut</button>
                                                     </div>
                                                     @else
                 
@@ -178,42 +177,53 @@
                                                 @endforeach
                                            
                                         </div>                                               
-                                        </div>
-                                    </div>
+                                     </div>
+                                  </div>
+                                </div>
                                 </div>
                             </div>
-                         </div>
+                          </div>
                         </div>
-
-
-                        <div class="tab-pane" id="post">
-                            <div class="row justify-content-center mx-1">
-                                <div class="card col-md-12">
-                                    
-                                    <div class="card-body">
                     
-                                        @foreach($user->posts as $post)
-                                        <div class="post-card">
-                                            <div class="post-card-body">
-                                            
-                                            <h5 class="card-title"><img src="{{$post->user->image}}" alt="" class="img-responsive img-thumbnail" style="height: 50px; width:50px;">
-                                                <p class="post-time" style="float:right;"> {{ $post->published_at }}</p>
-                                                    <a href="{{ route('users.show', $post->user_id)}}" class="post-name px-3">
-                                                    {{ $post->user->name }}</a></h5>
-                                                    <a href="{{ route('posts.show', $post->id) }}" class="btn btn-secondary" style="float:right;"><i class="far fa-comment-dots"></i></a> 
-                                                <h5 class="post-title card-title">{{ $post->title }}</h5>
-                                            </div>
-                                        </div>
-                                        @endforeach
 
+
+                            <div class="tab-pane" id="post">
+                                <div class="row justify-content-center mx-1">
+                                    <div class="card col-md-12">
                                         
-                                      
-                                    </div>
-                                 
-                                </div>
-                            </div>
+                                        <div class="card-body px-0 py-2">
+                        
+                                            @foreach($user->posts as $post)
+                                            <div class="post-index card my-1" style="background-color:rgba(249, 244, 235, 1); border: 3px solid gainsboro;">
+                                                <div class="row justify-content-center">
+                                                    <div class="col-8">
+                                                        <img src="{{$post->user->image}}" alt="" class="post-image img-responsive img-thumbnail mt-3 p-0" style="height: 35px; width: 35px;">
+                                                        <a href="{{ route('users.show', $post->user_id)}}" class="post-name px-3">
+                                                            {{ $post->user->name }}</a>
+                                                    </div>
+                    
+                                                    <div class="col-4 text-right mt-3">
+                                                        <a href="{{ route('posts.show', $post->id) }}" class="comment-icon btn btn-secondary"><i class="far fa-comment-dots"></i></a> 
+                                                    </div>
+                                                </div>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-12 col-md-10">
+                                                        <h5 class="post-title card-title">{{ $post->title }}</h5>
+                                                    </div>
+                                                    <div class="col-2 text-right">
+                                                        <p class="post-time d-none d-sm-block" style="float:right;"> {{ $post->published_at }}</p>
+                                                    
+                                                    </diV>  
+                                                </diV>  
 
-                        </div>
+                                            </div> 
+                                            @endforeach
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+                            </div>
                     </div>
 
                 </div>

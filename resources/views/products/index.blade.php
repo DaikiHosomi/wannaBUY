@@ -64,7 +64,7 @@
                         <div class="row">
                             @foreach($products as $product)
                             <a href="{{ route('products.show', $product->id) }}">
-                                <div class="mini-card card col-6 col-md-4">
+                                <div class="card col-6 col-md-4">
                                  <div class="product-box post-card card float-left my-3">
 
 

@@ -138,8 +138,8 @@
     color: white;
     border-radius: 25px;  
     width: 75%;
-    padding-top: 13px;
-    padding-bottom: 13px;
+    padding-top:12px;
+    padding-bottom:12px;
 }
 
 .unfavorite-button {
@@ -396,7 +396,8 @@ img {
     }
 
     .mini-card {
-        padding: 0px;
+        padding: 5px 0px;
+
     }
 
     .product-card-body {
@@ -406,7 +407,8 @@ img {
     .sold-button {
         font-size: 10px;
         width: 80px;
-
+        padding-top:6px;
+        padding-bottom:6px;
     }
 
     .unfavorite-button {
