@@ -24,9 +24,9 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'product_image1' => 'required|file|max:10000',
-            'product_image2' => 'max:10000',
-            'product_image3' => 'max:10000',
+            'product_image1' => 'required|file|max:600',
+            'product_image2' => 'max:600',
+            'product_image3' => 'max:600',
             'product_category_id' => 'required|numeric',
             'product_condition_id' => 'required|numeric',
             'transaction_way_id' => 'required|numeric',
