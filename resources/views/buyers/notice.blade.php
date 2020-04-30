@@ -16,7 +16,7 @@
         <div class="row justify-content-center m-3">
             <div class="card col-md-9">
 
-                <div class="card-header alert alert-success my-3 text-center"  style="border-radius: 25px;">交渉依頼の有無を確認をしよう</div>  
+                <div class="ask-alert card-header alert alert-success my-3 text-center"  style="border-radius: 25px;">交渉依頼の有無を確認をしよう</div>  
                 
                 
                 @foreach($buyers as $buyer)

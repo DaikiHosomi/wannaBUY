@@ -247,6 +247,11 @@ img {
 
 
 @media screen and (max-width:639px) {
+
+    .footer-heading {
+        padding-left: 30px;
+    }
+    
     img {
         object-fit: cover;
     }
@@ -471,6 +476,10 @@ img {
     
     .intro-col {
         padding-right: 0px;
+    }
+
+    .ask-alert {
+        font-size: 12px;
     }
 
 

@@ -129,7 +129,7 @@
     
                     <div class="row justify-content-center">
                         <div class="col-md-10 p-3">   
-                            <p class="alert alert-info text-center" style="border-radius: 25px;">以下のチャット欄にて、交渉を行なってください。<br>
+                            <p class="ask-alert alert alert-info text-center" style="border-radius: 25px;">以下で交渉を行なってください。<br>
                                 相互に了承を得た上、日時および場所を決め、実際に取引を行ってください。
                             </p>
     
@@ -139,7 +139,7 @@
                             @foreach($productComments as $comment)
                                 <div class="card">
                                     <div class="card-body" style="min-height: 125px;  background-color:rgba(249, 244, 235, 1); border: 2px solid gainsboro; "> 
-                                        <p class="float-right">{{ $comment->created_at }}</p>
+                                        <p class="post-time float-right">{{ $comment->created_at }}</p>
                                         <p class="card-text font-weight-bold"><img src="{{$comment->user->image}}" alt="" class="img-responsive img-thumbnail mr-3" style="height: 50px; width:50px;">
                                             {{ $comment->user->name }}</p>
                                         
@@ -152,7 +152,7 @@
                     </div>
     
                     <div class="row justify-content-center">
-                        <div class="col-md-6 p-3 text-center">
+                        <div class="col-md-6 p-2 text-center">
     
                             @if($buyerProduct->product->sold == '')
                                 <form action="{{ route('productComments.store', $product)  }}" method="POST">
@@ -183,9 +183,8 @@
 
                     <div class="row justify-content-center">
                         <div class="col-md-10">
-                            <div class="alert alert-danger text-center my-3" role="alert" style="border-radius: 25px;">
-                                交渉の末、取引を行わない（棄権）場合に関しては、<br>
-                                下記のボタンを押してください
+                            <div class="ask-alert alert alert-danger text-center my-3" role="alert" style="border-radius: 25px;">
+                                交渉の末、取引を行わない（棄権）場合は、下記のボタンを押してください
                                 <div class="text-center">
                                 {{ Form::open(['method' => 'DELETE', 'route' => ['buyers.destroy', $product, $wannaBuyer ]]) }}
                     
@@ -221,7 +220,7 @@
 
                             @if(Auth::user()->id === $buyerProduct->product->user->id)
                             <div>
-                                <div class="alert alert-success text-center my-3" role="alert" style="border-radius: 25px;">
+                                <div class="ask-alert alert alert-success text-center my-3" role="alert" style="border-radius: 25px;">
                                 取引の実行・終了後に下記のボタンを押してください。
                                     <div class="text-center">
                                     {{ Form::open(['method' => 'POST', 'route' => ['products.sold', $product]]) }}
