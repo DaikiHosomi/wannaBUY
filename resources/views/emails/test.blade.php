@@ -17,7 +17,7 @@
         <br>
 
         【URL】
-        <a href = "http://127.0.0.1:8000/products/{{$product->id}}/buyers/{{$buyer->id}}"> http://127.0.0.1:8000/products/{{$product->id}}/buyers/{{$buyer->id}}</a>
+        <a href = "http://wanna-buy.herokuapp.com/products/{{$product->id}}/buyers/{{$buyer->id}}"> http://wanna-buy.herokuapp.com/products/{{$product->id}}/buyers/{{$buyer->id}}</a>
 
     
 </body>
