@@ -22,7 +22,7 @@
                 <div class="ask-alert card-header alert alert-success my-3 text-center"  style="border-radius: 25px;">交渉依頼の有無を確認をしよう</div>  
 
                
-                        <ul class="nav nav-tabs mb-3">    
+                        <ul class="negotiation-nav nav nav-tabs mb-3">    
                             <li class="nav-item"><a href="{{ route('productComments.index')}}" class="nav-link
                                 {{  isset($ask['status']) ? '' : 'active' }}">交渉されている</a></li>
 
