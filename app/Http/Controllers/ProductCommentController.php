@@ -16,20 +16,32 @@ class ProductCommentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
 
-        $buyers = Buyer::latest('created_at')->
-        //productとのリレーションをロードする
-        whereHas('product', function($q){
-            $q->where('user_id', Auth::id());
-        })->get();
+       
+       $ask = $request->query();
+      
+            
+        if(isset($ask['status'])) {
+            $buyers = Buyer::where('user_id', Auth::id())->get();
+            $buyers->load('user', 'product.user');
+        } else {
+            $buyers = Buyer::latest('created_at')->
+            //productとのリレーションをロードする
+            whereHas('product', function($q){
+                $q->where('user_id', Auth::id());
+            })->get();
+            $buyers->load('user', 'product');
+
+        }
+
+        return view('buyers.notice', compact('buyers','ask'));
 
 
 
-        $buyers->load('user', 'product');
-
-        return view('buyers.notice', compact('buyers'));
+          
+        
 
     
        
