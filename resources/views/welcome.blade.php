@@ -28,10 +28,10 @@
                     </div>
 
                     @guest
-                    <div class="button col-md-6">
+                    <div class="button col-md-4">
                         <a href="{{ route('login') }}" class="btn-square-so-login mx-5">ログインする</a>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <a href="{{ route('register') }}" class="btn-square-so-register mx-5">会員登録する</a>   
                     </div>               
                     @else
@@ -51,7 +51,7 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-md-12 feature-top">
-                            <div class="feature-title">What is "WannaBUY"?</div>
+                            <div class="feature-title">What is "wannaBUY"?</div>
                             <div class="feature-heading mt-5 mb-3">『完全APU生間　参考書売買サービス』</div>
                         </div>
 
