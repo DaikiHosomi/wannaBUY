@@ -36,7 +36,7 @@
                                   <div class="form-group form-row my-3 text-center">
                                     <label for="productImage" class="col-md-3 col-xs-12 col-form-label text-md-right">画像1</label>
                                     <div class="col-md-8 col-xs-5">
-                                    <input type="file" name="product_image1" class="input-text">
+                                    <input type="file" name="product_image1" class="input-text" value="{{ old('product_image1') }}">
                                     @if ($errors->has('product_image1'))
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('product_image1') }}</strong>
@@ -48,7 +48,7 @@
                                   <div class="form-group form-row my-3">
                                     <label for="productImage" class="col-md-3 col-form-label text-md-right">画像2</label>
                                     <div class="col-md-8">
-                                    <input type="file" name="product_image2" class="input-text">
+                                    <input type="file" name="product_image2" class="input-text" value="{{ old('product_image2') }}">
                                     @if ($errors->has('product_image2'))
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('product_image2') }}</strong>
@@ -60,7 +60,7 @@
                                 <div class="form-group form-row mb-3">
                                     <label for="productImage" class="col-md-3 col-xs-12  col-form-label text-md-right ">画像3</label>
                                     <div class="col-md-8 col-xs-12" >
-                                    <input type="file" name="product_image3" class="input-text">
+                                    <input type="file" name="product_image3" class="input-text" value="{{ old('product_image3') }}">
                                     @if ($errors->has('product_image3'))
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('product_image3') }}</strong>
@@ -87,7 +87,11 @@
                                 <select class="form-control" id="formControlSelect1"　name="product_category_id">
                                 <option selected="">選択する</option>  
                                 @foreach ($productCatgories as $productCategory)
+                                @if((!empty($request->product_category_id) && $request->product_category_id == $productCategory->id) || old('product_category_id') == $productCategory->id )
+                                <option value="{{ $productCategory->id }}"　selected>{{ $productCategory->name }}</option>
+                                @else
                                 <option value="{{ $productCategory->id }}">{{ $productCategory->name }}</option>
+                                @endif
                                 @endforeach
                                     <!-- <option selected="">選択する</option>  
                                     <option value="1">APS/環境・開発</option>
@@ -117,7 +121,11 @@
                                 <select class="form-control" id="formControlSelect1" name="product_condition_id">
                                 <option selected="">選択する</option>
                                 @foreach($productConditions as $productCondition)
+                                @if((!empty($request->product_condition_id) && $request->product_condition_id == $productCondition->id) || old('product_condition_id') == $productCondition->id )
+                                <option value="{{ $productCondition->id }}" selected>{{ $productCondition->product_condition }}</option>
+                                @else
                                 <option value="{{ $productCondition->id }}">{{ $productCondition->product_condition }}</option>
+                                @endif
                                 @endforeach
                                     <!-- <option value="1">新品・未使用</option>
                                     <option value="2">書き込みはほとんどない</option>
@@ -132,7 +140,11 @@
                                 <select class="form-control" id="formControlSelect1" name="transaction_way_id">
                                 <option selected="">選択する</option>
                                 @foreach($transactionWays as $transactionWay)
+                                @if((!empty($request->transaction_way_id) && $request->transaction_way_id == $transactionWay->id ) || old('transaction_way_id') == $transactionWay->id  )
+                                <option value="{{ $transactionWay->id }}" selected>{{ $transactionWay->transaction_way }}</option>
+                                @else
                                 <option value="{{ $transactionWay->id }}">{{ $transactionWay->transaction_way }}</option>
+                                @endif
                                 @endforeach
                                     <!-- <option value="1">天空受渡・現金取引</option>
                                     <option value="2">下界受渡・現金取引</option>
@@ -154,22 +166,22 @@
 
                         <div class="form-group mt-3">    
                             <label for="className">講義名</label>
-                            <input type="text" class="form-control" id="className" placeholder="入力してください" name="class_name">
+                            <input type="text" class="form-control" id="className" placeholder="入力してください" name="class_name" value="{{ old('class_name') }}">
                         </div>   
     
                         <div class="form-group">
                             <label for="productName">商品名</label>
-                            <input type="text" class="form-control" id="productName" placeholder="入力してください" name="product_name">
+                            <input type="text" class="form-control" id="productName" placeholder="入力してください" name="product_name" value="{{ old('product_name') }}">
                          </div>   
     
                          <div class="form-group">
                             <label for="introduction">商品説明</label>
-                            <textarea class="introduction  form-control" id="introduction" rows="8"　name="introduction"　placeholder="入力してください"></textarea>
+                            <textarea class="introduction  form-control" id="introduction" rows="8"　name="introduction"　placeholder="入力してください" value="{{ old('introduction') }}"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="productName">価格</label>
                             <span>(￥)</span>
-                            <input type="text" class="form-control" id="price" placeholder="価格" name="price"　placeholder="（数字のみで）入力してください">
+                            <input type="text" class="form-control" id="price" placeholder="価格" name="price"　placeholder="（数字のみで）入力してください" value="{{ old('price') }}">
                         </div>   
                         </div>    
                     </div>            

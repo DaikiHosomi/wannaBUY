@@ -27,7 +27,7 @@
                         <div class="card col-xs-12 col-md-10 p-4 m-3 font-weight-bold" style="background-color:rgba(249, 244, 235, 1); border: 3px solid gainsboro;">
                                 <div class="form-group row">
                                     <label for="image" class="col-md-4  col-form-label">プロフィール画像</label>    
-                                    <input type="file" name="image" class="col-md-8">
+                                    <input type="file" name="image" class="col-md-8" value="{{ old('image') }}">
                                     @if ($errors->has('image'))
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('image') }}</strong>
@@ -112,7 +112,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="introduction">自己紹介</label>
-                                            <textarea class="form-control" id="introduction" rows="7"　name="introduction"　placeholder="入力してください"></textarea>
+                                            <textarea class="form-control" id="introduction" rows="7"　name="introduction"　placeholder="入力してください" value="{{ old('introduction') }}"></textarea>
                                         </div>
                                     </div>
                                 </div>

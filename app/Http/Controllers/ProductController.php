@@ -25,6 +25,8 @@ class ProductController extends Controller
      */
     public function index()
     {
+
+        
         $q = \Request::query();
         $productCategories = ProductCategory::all();
 
@@ -99,7 +101,7 @@ class ProductController extends Controller
         
         
         
-        
+        dd($request->files);
         foreach($request->files as $key=>$file)
         {
 
