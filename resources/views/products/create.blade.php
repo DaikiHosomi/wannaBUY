@@ -36,7 +36,7 @@
                                   <div class="form-group form-row my-3 text-center">
                                     <label for="productImage" class="col-md-3 col-xs-12 col-form-label text-md-right">画像1</label>
                                     <div class="col-md-8 col-xs-5">
-                                    <input type="file" name="product_image1" class="input-text" value="{{ old('product_image1') }}">
+                                    <input type="file" name="product_image1" class="input-text">
                                     @if ($errors->has('product_image1'))
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('product_image1') }}</strong>
@@ -48,7 +48,7 @@
                                   <div class="form-group form-row my-3">
                                     <label for="productImage" class="col-md-3 col-form-label text-md-right">画像2</label>
                                     <div class="col-md-8">
-                                    <input type="file" name="product_image2" class="input-text" value="{{ old('product_image2') }}">
+                                    <input type="file" name="product_image2" class="input-text">
                                     @if ($errors->has('product_image2'))
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('product_image2') }}</strong>
@@ -60,7 +60,7 @@
                                 <div class="form-group form-row mb-3">
                                     <label for="productImage" class="col-md-3 col-xs-12  col-form-label text-md-right ">画像3</label>
                                     <div class="col-md-8 col-xs-12" >
-                                    <input type="file" name="product_image3" class="input-text" value="{{ old('product_image3') }}">
+                                    <input type="file" name="product_image3" class="input-text">
                                     @if ($errors->has('product_image3'))
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('product_image3') }}</strong>
@@ -176,7 +176,7 @@
     
                          <div class="form-group">
                             <label for="introduction">商品説明</label>
-                            <textarea class="introduction  form-control" id="introduction" rows="8"　name="introduction"　placeholder="入力してください" value="{{ old('introduction') }}"></textarea>
+                            <textarea class="introduction  form-control" id="introduction" rows="8"　name="introduction"　placeholder="入力してください">{{ old('introduction') }}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="productName">価格</label>
