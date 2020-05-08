@@ -30,18 +30,18 @@
                         <div class="col-md-9 p-4 font-weight-bold" style="background-color:rgba(249, 244, 235, 1); border: 3px solid gainsboro; width:85%;">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">名前</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="入力してください" name="name">
+                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="入力してください" name="name"  value="{{ old('name') }}">
                             </div>
     
     
                             <div class="form-group">
                                 <label for="exampleInputEmail1">メールアドレス</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="入力してください">
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="入力してください"  value="{{ old('email') }}">
                             </div>
     
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">お問い合わせ内容</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="５" name="comment" placeholder="入力してください"></textarea>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="５" name="comment" placeholder="入力してください">{{ old('comment') }}</textarea>
                             </div>
                             @auth 
                             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
