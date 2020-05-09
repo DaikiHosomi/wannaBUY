@@ -101,7 +101,7 @@ class ProductController extends Controller
         
         
         
-        dd($request->files);
+
         foreach($request->files as $key=>$file)
         {
 
