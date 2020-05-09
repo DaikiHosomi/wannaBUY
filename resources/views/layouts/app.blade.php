@@ -10,19 +10,19 @@
     <title>wannaBUY</title>
 
     <!-- Scripts -->
-    <script src="{{ secure_asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
     	
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     
     {{-- <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link rel="stylesheet" href="<?php echo secure_asset('css/layout.css')?>" type="text/css"> 
+    <link rel="stylesheet" href="<?php echo asset('css/layout.css')?>" type="text/css"> 
     <link href="https://fonts.googleapis.com/css2?family=Purple+Purse&family=Ubuntu:ital,wght@1,700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 
 </head>
@@ -33,7 +33,7 @@
             <div class="container">
                 
                 <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{ secure_asset('../image/logo.png') }}" width="40px" height="40px" alt="">
+                <img src="{{ asset('../image/logo.png') }}" width="40px" height="40px" alt="">
                 wannaBUY
                 </a>
                 
