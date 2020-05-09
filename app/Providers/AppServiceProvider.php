@@ -23,8 +23,10 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(UrlGenerator $url)
+    public function boot()
     {
-        $url->forceScheme('https');
+        \URL::forceScheme('https');
+        Schema::defaultStringLength(191);
+
     }
 }
