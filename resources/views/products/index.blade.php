@@ -122,14 +122,14 @@
 
                                         <div class="row">
 
-                                            <div class="col-md-6">
+                                            {{-- <div class="col-md-6">
                                                 <div class="text-left d-none d-sm-block" style="height: 30px;">
                                                     <a href="{{ route('products.show', $product->id) }}" class="product-detail">詳細画面へ<i class="far fa-hand-point-right"></i></a>
                                                 </div>    
-                                            </div>
+                                            </div> --}}
 
-                                            <div class="col-12 col-md-6 mt-2">
-                                                <p class="card-text" style="z-index: 5;">
+                                            <div class="col-12 col-md-12 mt-2">
+                                                <p class="card-text text-right" style="z-index: 5;">
                                                     <a href="{{ route('users.show', $product->user_id)}}" class="product-username-index">
                                                         {{ $product->user->name }}</a>　<img src="{{$product->user->image}}" alt="" class="img-responsive img-thumbnail mx-2" style="height: 30px; width:30px;">
                                                     </p>
