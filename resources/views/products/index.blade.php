@@ -71,7 +71,7 @@
                                     @foreach($product->productImages as $productImage)
                                     @if ($loop->first)
                                     <div class="product-card-body bg-light w-100"> 
-                                    <img src="{{ $productImage->product_image }}" alt="" class="product-image img-responsive img-thumbnail" style=" object-fit: cover;">
+                                    <img src="{{ $productImage->product_image }}" alt="" class="product-image img-responsive img-thumbnail" style="object-fit: cover;">
                                     </div>                  
                                     @endif
                                     @endforeach

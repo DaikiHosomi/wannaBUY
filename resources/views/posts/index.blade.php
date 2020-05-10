@@ -39,7 +39,7 @@
                                     <h5 class="post-title card-title">{{ $post->title }}</h5>
                                 </div>
                                 <div class="col-2 text-right">
-                                    <p class="post-time d-none d-sm-block" style="float:right;"> {{ $post->published_at }}</p>
+                                    <p class="post-time d-none d-sm-block" style="float:right;"> {{ $post->created_at }}</p>
                                 
                                 </diV>  
                             </diV>  

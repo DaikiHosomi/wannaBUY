@@ -14,7 +14,7 @@
                     <div class="top-card-header text-center">CommentPage </div>
                     <div class="post-card-body  my-3" >
                             <h5 class="card-title"><img src="{{$post->user->image}}" alt="" class="img-responsive img-thumbnail" style="height: 50px; width:50px;">
-                                <p class="post-time" style="float:right;"> {{ $post->published_at }}</p>
+                                <p class="post-time" style="float:right;"> {{ $post->created_at }}</p>
                                     <a href="{{ route('users.show', $post->user_id)}}" class="post-name px-3">
                                     {{ $post->user->name }}</a></h5>
                                 <h5 class="post-title card-title">{{ $post->title }}</h5>
