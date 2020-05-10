@@ -94,6 +94,7 @@
                                     <div class="container">
                                         <div class="row">
                                             @foreach($user->products as $product)
+                                            <a href="{{ route('products.show', $product->id) }}">
                                                 <div class="card col-6 col-md-4 p-1">
                                                 <div class="product-box post-card card float-left my-3 w-100">
                 
@@ -174,7 +175,8 @@
                                                 </div>
                                                 
                                                 </div>
-                                                @endforeach
+                                            </a>
+                                            @endforeach
                                            
                                         </div>                                               
                                      </div>

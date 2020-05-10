@@ -24,9 +24,9 @@ class ProductEditRequest extends FormRequest
     public function rules()
     {
         return [
-                'product_image1' => 'max:1000',
-                'product_image2' => 'max:1000',
-                'product_image3' => 'max:1000',
+                'product_image1' => 'max:700',
+                'product_image2' => 'max:700',
+                'product_image3' => 'max:700',
                 'product_category_id' => 'required|numeric',
                 'product_condition_id' => 'required|numeric',
                 'transaction_way_id' => 'required|numeric',
@@ -40,9 +40,9 @@ class ProductEditRequest extends FormRequest
     public function messages()
     {
         return [
-            'product_image1.max:1000' => '画像サイズが大きすぎます。画像を縮小して再度アップロードしてください。',
-            'product_image2.max:1000' => '画像サイズが大きすぎます。画像を縮小して再度アップロードしてください。',
-            'product_image3.max:1000' => '画像サイズが大きすぎます。画像を縮小して再度アップロードしてください。',
+            'product_image1.max:700' => '画像サイズが大きすぎます。画像を縮小して再度アップロードしてください。',
+            'product_image2.max:700' => '画像サイズが大きすぎます。画像を縮小して再度アップロードしてください。',
+            'product_image3.max:700' => '画像サイズが大きすぎます。画像を縮小して再度アップロードしてください。',
             'product_category_id.numeric' => '商品カテゴリーを選択してください。',
             'product_condition_id.numeric' => '商品状態を選択してください。',
             'transaction_way_id.numeric' => '取引方法を選択してください。',
