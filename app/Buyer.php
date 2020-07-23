@@ -12,9 +12,9 @@ class Buyer extends Model
 
     public function user(){
         return $this->belongsTo(\App\User::class,'user_id');
-      }
+    }
 
-      public function product() {
+    public function product() {
         return $this->belongsTo(\App\Product::class, 'product_id', 'id');
     }
 

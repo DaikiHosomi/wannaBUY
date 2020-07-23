@@ -115,7 +115,7 @@
                                 </select>
                             </div>
                             
-               
+            
                             <div class="form-group">
                                 <label for="productCondition">商品状態</label>
                                 <select class="form-control" id="formControlSelect1" name="product_condition_id">

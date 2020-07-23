@@ -26,11 +26,9 @@ class ProductController extends Controller
     public function index()
     {
 
-        
         $q = \Request::query();
         $productCategories = ProductCategory::all();
 
-        
         
         if(isset($q['product_category_id'])) {
             $user = Auth::user();
@@ -43,7 +41,7 @@ class ProductController extends Controller
                 'products' => $products,
                 'user' => $user,               
             ]);
-         } else {
+        } else {
             $user = Auth::user();
             $products = Product::latest('published_at')
             ->where('published_at', '<=', Carbon::now())
@@ -69,7 +67,7 @@ class ProductController extends Controller
         $productCategories = ProductCategory::all();
         $productConditions = ProductCondition::all();
         $transactionWay = TransactionWay::all();
-       
+    
 
         return view('products.create', [
             'productCatgories' => $productCategories,
@@ -153,8 +151,8 @@ class ProductController extends Controller
                 $productImage->save();
                 }
 
-         }
-        return redirect('/products')->with('message', '商品を出品しました');   
+        }
+        return redirect()->route('products.index')->with('message', '商品を出品しました');   
     }
 
     
@@ -167,11 +165,11 @@ class ProductController extends Controller
      */
     public function show(Product $product) 
     {
-       
-       
+    
+    
         $product->load('user','favorites');    
         $favoriteCount = $product->favorites()->count();
-  
+
         return view('products.show', [
             'product' => $product,
             'favoriteCount' => $favoriteCount,
@@ -217,7 +215,7 @@ class ProductController extends Controller
         $product->load('productImages');
 
     
-     
+    
         
         foreach($request->files as $key=>$file) {
 
@@ -230,7 +228,7 @@ class ProductController extends Controller
                 'width'     => $width, 
                 'height'    => $height
             ]);
-         if($productImage = ProductImage::where('product_id',$id)->where('image_number',1)->first()) {
+        if($productImage = ProductImage::where('product_id',$id)->where('image_number',1)->first()) {
                 $productImage-> product_image = $logoUrl;
                 $productImage->save(); 
             }
@@ -245,7 +243,7 @@ class ProductController extends Controller
                 'width'     => $width, 
                 'height'    => $height
             ]);
-         if($productImage = ProductImage::where('product_id',$id)->where('image_number',2)->first()) {
+        if($productImage = ProductImage::where('product_id',$id)->where('image_number',2)->first()) {
                 $productImage-> product_image = $logoUrl;
                 $productImage->save(); 
             }
@@ -259,15 +257,15 @@ class ProductController extends Controller
                 'width'     => $width, 
                 'height'    => $height
             ]);
-         if($productImage = ProductImage::where('product_id',$id)->where('image_number',3)->first()) {
+        if($productImage = ProductImage::where('product_id',$id)->where('image_number',3)->first()) {
                 $productImage-> product_image = $logoUrl;
                 $productImage->save(); 
             }
         }
             
-       }
+    }
     
-        return redirect('/products')->with('message', '商品を編集しました');;
+        return redirect()->route('products.index')->with('message', '商品を編集しました');;
     
     }
 
@@ -283,7 +281,7 @@ class ProductController extends Controller
             return abort (500);
         } else {
             $product->delete();
-            return redirect("/products")->with('message', '商品を削除しました');
+            return redirect()->route('products.index')->with('message', '商品を削除しました');
         }
     }
 
@@ -296,10 +294,7 @@ class ProductController extends Controller
 
     public function search(Request $request)
     {
-        
-        
-       
-       
+
         $products = Product::where('product_name', 'like', "%{$request->search}%")
                 ->orwhere('introduction', 'like', "%{$request->search}%")
                 ->orwhere('class_name', 'like', "%{$request->search}%")
@@ -307,14 +302,11 @@ class ProductController extends Controller
                     $query->where('name', 'like', "%{$request->search}%");})
                 ->latest('published_at')
                 ->paginate(6);
-            
-       
 
-          $search_result = $request->search.'の検索結果'.$products->total().'件';
-          
+        $search_result = $request->search.'の検索結果'.$products->total().'件';
         
         return view('products.index', [
-            'products' =>$products,
+            'products' => $products,
             'search_result' =>$search_result,
             'search_query' => $request->search,
         ]);
@@ -322,16 +314,16 @@ class ProductController extends Controller
 
     public function sold(Request $request)
     {
-       $product = Product::find($request->product_id);
-       $product->sold = $request->sold;
-       $product->save();
+    $product = Product::find($request->product_id);
+    $product->sold = $request->sold;
+    $product->save();
         
 
-       return redirect()->route('products.index');
+    return redirect()->route('products.index');
 
     }
 
 
 
-   
+
 }

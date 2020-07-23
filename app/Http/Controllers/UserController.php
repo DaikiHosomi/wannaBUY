@@ -118,6 +118,7 @@ class UserController extends Controller
      */
     public function update(UserRequest $request, $id)
     {
+        dd($request);
         $user = User::find($id);
         $user -> gender = $request->gender;
         $user -> department = $request->department;
@@ -127,7 +128,7 @@ class UserController extends Controller
         $user->save();
 
 
-      
+    
 
         if($request->file('image')){
             if ($logo = $request->file('image')) {   

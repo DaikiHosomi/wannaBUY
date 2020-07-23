@@ -19,9 +19,9 @@ class ProductCommentController extends Controller
     public function index(Request $request)
     {
 
-       
-       $ask = $request->query();
-      
+    
+    $ask = $request->query();
+    
             
         if(isset($ask['status'])) {
             $buyers = Buyer::where('user_id', Auth::id())->get();
@@ -40,14 +40,14 @@ class ProductCommentController extends Controller
 
 
 
-          
+        
         
 
     
-       
+    
     //    $products = Product::where('user_id', Auth::id())->get();
     //    dd($products);
-       
+    
     //    foreach($products as $product) {
             
     //         $buyerNotices = Buyer::('product_id', $product->id)->get();
@@ -62,7 +62,7 @@ class ProductCommentController extends Controller
      */
     public function create()
     {
-     
+    
         return view('productComments.create');
     }
 
@@ -75,7 +75,7 @@ class ProductCommentController extends Controller
     public function store(ProductCommentRequest $request)
     {
         
-       
+    
         $productComment = new ProductComment;
         $productComment->buyer_id = $request->buyer_id;
         $productComment->comment = $request->comment;
@@ -83,7 +83,7 @@ class ProductCommentController extends Controller
         $productComment->save();
 
         $productComment->load('wannaBuyer.product');
-       
+    
 
 
         return redirect()->route('buyers.show', [

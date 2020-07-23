@@ -12,7 +12,7 @@ class ProductCategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-       
+    
 
         DB::table('product_categories')->insert([
             ['name' => 'APS/環境・開発'],

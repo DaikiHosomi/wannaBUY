@@ -103,7 +103,7 @@ class PostsController extends Controller
         } else {
             $post->delete();
             return redirect("/posts")->with('message', '記事を削除しました');
-       }
+    }
 
     }
 

@@ -35,7 +35,7 @@ class ProductRequest extends FormRequest
             'price' => 'required|numeric',           
             'user_id' => 'required|numeric',
             // 'image_number' => 'required',
-           
+        
         ];
     }
     public function messages()
@@ -52,7 +52,7 @@ class ProductRequest extends FormRequest
             'introduction.required' => '商品説明を入力してください。',
             'price.required' => '価格を入力して下さい。',
             'price.numeric' => '  価格は半角数字で入力して下さい。',
-           
+        
         ];
     }
 }

@@ -87,7 +87,7 @@
                             <a href="{{ route('users.show', $product->user_id)}}"></a>
                                 {{ $product->user->name }}</p>
                         </div>
-                       
+                    
                         <input type="hidden" name="product_condition_id" value="{{ $product->productCondition->product_condition }}">
                         <input type="hidden" name="transaction_way_id" value="{{ $product->transactionWay->transaction_way }}">
                         <input type="hidden" name="introduction" value="{{ $product->introduction }}">

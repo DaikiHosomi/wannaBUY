@@ -15,8 +15,7 @@
                     @endif
         
                 </div>
-             
-              
+            
         </div> 
     </div>
 <div class="card bg-light">
@@ -70,8 +69,6 @@
                         
                     <p class="product-time text-right my-3">出品日時:{{ $product->published_at }}</p>
                     </div>                  
-                                  
-                    
 
 
 
@@ -186,7 +183,7 @@
                                     </div>
                                     </div>
                                 </div>
-                           
+                        
                                 @if($product->sold == '')
                                     <a href="{{ route('products.edit', $product->id) }}" class="product-edit-button btn btn-light float-left;" style="border: 2px solid #4682B4; border-radius: 10px;"><i class="far fa-edit"></i></a> 
                                 @endif

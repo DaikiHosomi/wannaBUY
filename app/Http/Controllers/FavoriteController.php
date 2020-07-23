@@ -10,7 +10,8 @@ class FavoriteController extends Controller
 {
 
     // public function favorite(Product $product, Request $request) {
-       
+
+        
     //     $favorite = Favorite::create(['user_id' => $request->user_id, 'product_id' => $product->id ]);
 
     //     return response()->json([]);
