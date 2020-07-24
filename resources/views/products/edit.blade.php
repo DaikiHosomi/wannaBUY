@@ -102,8 +102,16 @@
                                     <div class="form-group">
                                         <label for="productCategory">講義カテゴリー</label>
                                         <select class="form-control" id="formControlSelect1"　name="product_category_id">
-                                            <option selected="">選択する</option>     
-                                            <option value="1" {{ $product->product_category_id === 1? "selected":"" }} >APS/環境・開発</option>
+                                            <option selected="">選択する</option> 
+                                            @foreach ($productCatgories as $productCategory)
+                                                @if($product->product_category_id == $productCategory-> id )
+                                                <option value="{{ $productCategory->id }}"　selected>{{ $productCategory->name }}</option>
+                                                @else
+                                                <option value="{{ $productCategory->id }}">{{ $productCategory->name }}</option>
+                                                @endif
+                                            @endforeach
+                                            
+                                            {{-- <option value="1" {{ $product->product_category_id === 1? "selected":"" }} >APS/環境・開発</option>
                                             <option value="2" {{ $product->product_category_id === 2? "selected":"" }}>APS/観光学</option>
                                             <option value="3" {{ $product->product_category_id === 3? "selected":"" }}>APS/国際関係</option>
                                             <option value="4" {{ $product->product_category_id === 4? "selected":"" }}>APS/文化・社会・メディア</option>
@@ -120,7 +128,7 @@
                                             <option value="15" {{ $product->product_category_id === 15? "selected":"" }}>言語科目/日本語</option>
                                             <option value="16" {{ $product->product_category_id === 16? "selected":"" }}>言語科目/AP言語</option>
                                             <option value="17" {{ $product->product_category_id === 17? "selected":"" }}>資格試験参考書</option>
-                                            <option value="18" {{ $product->product_category_id === 18? "selected":"" }}>その他</option>
+                                            <option value="18" {{ $product->product_category_id === 18? "selected":"" }}>その他</option> --}}
                                         </select>
                                     </div> 
 
@@ -128,12 +136,20 @@
                                         <label for="productCondition">商品状態</label>
                                         <select class="form-control" id="formControlSelect1" name="product_condition_id">
                                         <option selected="">選択する</option>
-                                            
-                                            <option value="1" {{ $product->product_condition_id === 1? "selected":"" }}>新品・未使用</option>
+
+                                            @foreach($productConditions as $productCondition)
+                                                @if($product->product_condition_id == $productCondition-> id )
+                                                <option value="{{ $productCondition->id }}" selected>{{ $productCondition->product_condition }}</option>
+                                                @else
+                                                <option value="{{ $productCondition->id }}">{{ $productCondition->product_condition }}</option>
+                                                @endif
+                                            @endforeach
+                                                                
+                                            {{-- <option value="1" {{ $product->product_condition_id === 1? "selected":"" }}>新品・未使用</option>
                                             <option value="2" {{ $product->product_condition_id === 2? "selected":"" }}>書き込みはほとんどない</option>
                                             <option value="3" {{ $product->product_condition_id === 3? "selected":"" }}>少しの書き込み汚れあり</option>
                                             <option value="4" {{ $product->product_condition_id === 4? "selected":"" }}>やや書き込み汚れありあり</option>
-                                            <option value="5" {{ $product->product_condition_id === 5? "selected":"" }}>全体的に書き込み汚れありあり</option>
+                                            <option value="5" {{ $product->product_condition_id === 5? "selected":"" }}>全体的に書き込み汚れありあり</option> --}}
                                         </select>
                                     </div>
 
@@ -141,9 +157,16 @@
                                         <label for="transactionWay">取引方法</label>
                                         <select class="form-control" id="formControlSelect1" name="transaction_way_id">
                                             <option selected="">選択する</option>
-                                            <option value="1" {{ $product->transaction_way_id === 1? "selected":"" }}>天空受渡・現金取引</option>
+                                            @foreach($transactionWays as $transactionWay)
+                                            @if($product->transaction_way_id == $transactionWay-> id )
+                                            <option value="{{ $transactionWay->id }}" selected>{{ $transactionWay->transaction_way }}</option>
+                                            @else
+                                            <option value="{{ $transactionWay->id }}">{{ $transactionWay->transaction_way }}</option>
+                                            @endif
+                                            @endforeach
+                                            {{-- <option value="1" {{ $product->transaction_way_id === 1? "selected":"" }}>天空受渡・現金取引</option>
                                             <option value="2" {{ $product->transaction_way_id === 2? "selected":"" }}>下界受渡・現金取引</option>
-                                            <option value="3" {{ $product->transaction_way_id === 3? "selected":"" }}>その他</option>
+                                            <option value="3" {{ $product->transaction_way_id === 3? "selected":"" }}>その他</option> --}}
                                         </select>
                                     </div>
                                 </div>

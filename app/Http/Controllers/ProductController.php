@@ -186,9 +186,16 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+
+        $productCategories = ProductCategory::all();
+        $productConditions = ProductCondition::all();
+        $transactionWay = TransactionWay::all();
+    
         return view('products.edit', [
+            'productCatgories' => $productCategories,
+            'productConditions' => $productConditions,
+            'transactionWays' => $transactionWay,
             'product' => $product,
-            
         ]);
     }
 
