@@ -29,6 +29,7 @@ Route::GET('/prosucts/search', 'ProductController@search')->name('products.searc
 
 // Route::resource('/posts', 'PostsController', ['except' => ['index']]);
 Route::get('/mail', 'MailSendController@send');
+Route::get('/users/favorite', 'UserController@favorite')->name('users.favorite');
 
 
 Route::resource('/posts', 'PostsController')->middleware('auth');
@@ -44,11 +45,10 @@ Route::resource('/users', 'UserController');
 Route::post('/contacts/send', 'ContactController@send')->name('contacts.sned');
 Route::resource('/contacts', 'ContactController',['except' => ['create', 'show', 'update', 'destroy', 'edit']]);
 
-
 Route::group(['middleware'=>'auth'],function(){
     Route::group(['prefix'=>'products/{id}'],function(){
-       Route::post('favorite','FavoriteController@store')->name('favorites.favorite');
-       Route::delete('unfavorite','FavoriteController@destroy')->name('favorites.unfavorite');
+        Route::post('favorite','FavoriteController@store')->name('favorites.favorite');
+        Route::delete('unfavorite','FavoriteController@destroy')->name('favorites.unfavorite');
     });
 });
 
