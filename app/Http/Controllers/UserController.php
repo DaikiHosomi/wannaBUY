@@ -8,6 +8,7 @@ use App\User;
 use App\Product;
 use Auth;
 use App\Post;
+use App\Favorite;
 
 
 class UserController extends Controller
@@ -146,11 +147,7 @@ class UserController extends Controller
          
         }
      
-        
-
          return redirect('/users')->with('message', 'プロフィールを編集しました');   
-
-
 
     }
 
@@ -163,5 +160,17 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function favorite(User $user) {
+    
+        $user = Auth::user();
+
+        $user->load('favorites');
+
+
+        return view('users.favorite', [
+            'user' => $user,           
+        ]);
     }
 }
