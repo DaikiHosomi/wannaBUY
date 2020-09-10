@@ -69,11 +69,6 @@
                         
                     <p class="product-time text-right my-3">出品日時:{{ $product->published_at }}</p>
                     </div>                  
-
-
-
-
-
                     <div class="col-md-6">
                         <table class="table table-striped font-weight-bold text-center" style="border: 8px solid gainsboro;">
                             <tbody>
@@ -82,7 +77,7 @@
                                     <td>{{ $product->user->name }}</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">クラスカテゴリー</th>
+                                    <th scope="row">カテゴリー</th>
                                     <td>{{ $product->productCategory->name }}</td>
                                 </tr>
                                 <tr>
