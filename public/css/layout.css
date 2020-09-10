@@ -127,19 +127,14 @@
     background-color:rgba(249, 244, 235, 1);
 }
 
-.product-card-body {
-    border: 10px solid gainsboro;
-}
-
-
 .sold-button {
     background-color:rgb(249, 37, 0);
     border: 3px solid gainsboro;
     color: white;
     border-radius: 25px;  
     width: 75%;
-    padding-top:12px;
-    padding-bottom:12px;
+    padding-top: 6px;
+    padding-bottom: 6px;
 }
 
 .unfavorite-button {
@@ -216,9 +211,8 @@ img {
 }
 
 .product-card-body img {
-    height: 210px;
-    width: 110%;
-
+    height: 300px;
+    width: 100%;
 }
 
 
@@ -243,9 +237,23 @@ img {
 
 
 
-
-
-
+.product-price {
+    align-items: center;
+    background: rgba(0,0,0,.4);
+    border-radius: 0 14px 14px 0;
+    bottom: 8px;
+    box-sizing: border-box;
+    color: #fff;
+    display: inline-flex;
+    font-size: 17px;
+    height: 32px;
+    letter-spacing: .04em;
+    margin: 0;
+    padding: 0 12px;
+    z-index: 2;
+    position: absolute;
+    top: 120%;
+}
 
 
 @media screen and (max-width:639px) {
@@ -339,9 +347,8 @@ img {
 
 
     .product-card-body img {
-        height: 80px;
+        height: 150px;
         width: 100%;
-    
     }
 
 
@@ -510,6 +517,11 @@ img {
 
     .negotiation-nav {
         font-size: 10px;;
+    }
+
+
+    .product-price {
+        top: 45%;
     }
 
 
