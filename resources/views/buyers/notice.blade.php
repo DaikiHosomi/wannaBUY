@@ -21,7 +21,6 @@
 
                 <div class="ask-alert card-header alert alert-success my-3 text-center"  style="border-radius: 25px;">交渉依頼の有無を確認をしよう</div>  
 
-               
                         <ul class="negotiation-nav nav nav-tabs mb-3">    
                             <li class="nav-item"><a href="{{ route('productComments.index')}}" class="nav-link
                                 {{  isset($ask['status']) ? '' : 'active' }}">交渉されている</a></li>
@@ -34,7 +33,6 @@
                         <div class="tab-content">
                             <div class="tab-pane active">
                 
-           
                             @foreach($buyers as $buyer)
                                 <div class="card m-2" style="border: 3px solid gainsboro;">
                                         <div class="card p-2" style="background-color:rgba(249, 244, 235, 1);">
@@ -69,7 +67,7 @@
                             @endforeach
 
                             </div>
-                       
+                    
                         </div>  
              
                 
