@@ -3,7 +3,7 @@
 wannaBUY
 
 # DEMO
-こちらからアクセスできます。会員登録なしでも商品一覧、商品詳細,掲示板の確認は可能です。
+以下のリンクからアクセスできます。会員登録なしでも商品一覧、商品詳細,掲示板の確認は可能です。
 
 You can check this service from the link on the below.　You can see the products , detail and board pages without sigh up.
 
