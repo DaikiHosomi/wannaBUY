@@ -52,29 +52,29 @@ class ContactController extends Controller
         
 
         $contact = Contact::where('id', $request->contact_id)->first();
-       
+    
         //  メールに表示する内容を設定
-         $data = array();
-         $data['text'] = 'ここがメール本文です。'; 
-         
+        $data = array();
+        $data['text'] = 'ここがメール本文です。'; 
+        
         //  メール本文
         //  第1引数：メールの内容の表示に使うテンプレート(blade)
         //  第2引数：テンプレートファイルに渡すデータ(配列で渡す)
         //  第3引数：コールバック関数で送信先やタイトルの指定
-         
+        
         Mail::send(
-             'emails.contact',
-             ['contact'=> $contact], function($message) use ($contact) {
+            'emails.contact',
+            ['contact'=> $contact], function($message) use ($contact) {
                  $message->to('wannabuy.apu@gmail.com')   // 送信先アドレス
-                 ->subject('お問い合わせがありました');
-             }
-         );
+            ->subject('お問い合わせがありました');
+            }
+        );
 
 
     
-         return view('contacts.thanks', [
-             'contact' => $contact,
-         ]);
+        return view('contacts.thanks', [
+            'contact' => $contact,
+        ]);
 
     }
 

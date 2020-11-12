@@ -19,10 +19,8 @@ class ProductCommentController extends Controller
     public function index(Request $request)
     {
 
-    
     $ask = $request->query();
     
-            
         if(isset($ask['status'])) {
             $buyers = Buyer::where('user_id', Auth::id())->get();
             $buyers->load('user', 'product.user');
@@ -33,26 +31,8 @@ class ProductCommentController extends Controller
                 $q->where('user_id', Auth::id());
             })->get();
             $buyers->load('user', 'product');
-
         }
-
         return view('buyers.notice', compact('buyers','ask'));
-
-
-
-        
-        
-
-    
-    
-    //    $products = Product::where('user_id', Auth::id())->get();
-    //    dd($products);
-    
-    //    foreach($products as $product) {
-            
-    //         $buyerNotices = Buyer::('product_id', $product->id)->get();
-    //    }]
-
     }
 
     /**
@@ -74,8 +54,6 @@ class ProductCommentController extends Controller
      */
     public function store(ProductCommentRequest $request)
     {
-        
-    
         $productComment = new ProductComment;
         $productComment->buyer_id = $request->buyer_id;
         $productComment->comment = $request->comment;
@@ -85,61 +63,11 @@ class ProductCommentController extends Controller
         $productComment->load('wannaBuyer.product');
     
 
-
         return redirect()->route('buyers.show', [
             
             'product' => $productComment->wannaBuyer->product->id,
             'buyer' => $request->buyer_id,
     ]);
-
-    }
-    
-    
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-
-        
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy()
-    {
-        
 
     }
 }

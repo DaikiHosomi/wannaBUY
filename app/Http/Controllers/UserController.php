@@ -19,12 +19,8 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(User $user)
-    {
-        
+    {   
         $user = Auth::user();
-        
-      
-
         $user->load('products','posts');
 
         return view('users.index', [
@@ -73,11 +69,9 @@ class UserController extends Controller
             ]);
             $user-> image = $logoUrl;
             $user->save();
-         }
-     
-        
-
-         return redirect('/users')->with('message', 'プロフィールを登録しました');   
+        }
+    
+        return redirect('/users')->with('message', 'プロフィールを登録しました');   
         
     }
 
@@ -119,7 +113,6 @@ class UserController extends Controller
      */
     public function update(UserRequest $request, $id)
     {
-        dd($request);
         $user = User::find($id);
         $user -> gender = $request->gender;
         $user -> department = $request->department;
@@ -143,23 +136,9 @@ class UserController extends Controller
                 ]);
                 $user-> image = $logoUrl;
                 $user->save();
-         }
-         
+            }
         }
-     
-         return redirect('/users')->with('message', 'プロフィールを編集しました');   
-
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return redirect('/users')->with('message', 'プロフィールを編集しました');   
     }
 
     public function favorite(User $user) {

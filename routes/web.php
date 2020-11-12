@@ -11,46 +11,50 @@
 |
 */
 
+// LP
 Route::get('/', function () {
     return view('welcome');
 });
 
+// メール関連
 Route::post('/email', 'ChangeEmailController@sendChangeEmailLink');
+Route::get('/mail', 'MailSendController@send');
 
-
-
-
+// ユーザーページ
 Auth::routes();
+Route::get('/users/favorite', 'UserController@favorite')->name('users.favorite');
+Route::resource('/users', 'UserController',['except' => ['destroy']])->middleware('auth');
 
-// Route::get('/', 'PostsController@index')->name('posts.index');
-// Route::get('/', 'ProductController@index')->name('products.index');
-
+// 検索機能
 Route::GET('/prosucts/search', 'ProductController@search')->name('products.search');
 
-// Route::resource('/posts', 'PostsController', ['except' => ['index']]);
-Route::get('/mail', 'MailSendController@send');
-Route::get('/users/favorite', 'UserController@favorite')->name('users.favorite');
+
+// 掲示板ページ
+Route::resource('/posts', 'PostsController',['except' => ['edit','update']])->middleware('auth');
+Route::resource('/postComments', 'PostCommentController', ['only' => ['create', 'store', 'destroy']])->middleware('auth');
 
 
-Route::resource('/posts', 'PostsController')->middleware('auth');
-Route::resource('/users', 'UserController')->middleware('auth');
-Route::resource('/postComments', 'PostCommentController')->middleware('auth');
-
+// 商品ページ関連
 Route::post('/products/{product}', 'ProductController@sold')->name('products.sold');
 Route::resource('/products', 'ProductController'); 
-Route::resource('/products/{product}/buyers', 'BuyerController')->middleware('auth');
-Route::Get('productComments', 'ProductCommentController@index')->name('productComments.index')->middleware('auth');
-Route::resource('/products/{product}/productComments', 'ProductCommentController', ['except' => ['index']])->middleware('auth');
-Route::resource('/users', 'UserController');
-Route::post('/contacts/send', 'ContactController@send')->name('contacts.sned');
-Route::resource('/contacts', 'ContactController',['except' => ['create', 'show', 'update', 'destroy', 'edit']]);
-
+Route::Get('productComments', 'ProductCommentController@index',)->name('productComments.index')->middleware('auth');
 Route::group(['middleware'=>'auth'],function(){
     Route::group(['prefix'=>'products/{id}'],function(){
         Route::post('favorite','FavoriteController@store')->name('favorites.favorite');
         Route::delete('unfavorite','FavoriteController@destroy')->name('favorites.unfavorite');
     });
 });
+
+
+// 取引ページ関連
+Route::resource('/products/{product}/productComments', 'ProductCommentController', ['only' => ['create','store']])->middleware('auth');
+Route::resource('/products/{product}/buyers', 'BuyerController', ['only' => ['store','show','destroy']])->middleware('auth');
+
+
+// お問い合わせページ関連
+Route::post('/contacts/send', 'ContactController@send')->name('contacts.sned');
+Route::resource('/contacts', 'ContactController',['only' => ['index', 'store']]);
+
 
 
 

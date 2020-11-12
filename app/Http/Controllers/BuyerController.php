@@ -12,37 +12,6 @@ use Illuminate\Support\Facades\Mail;
 
 class BuyerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-    
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-
-
-
-
-    
     public function store(Request $request)
     {
 
@@ -51,7 +20,6 @@ class BuyerController extends Controller
         ->first();
 
     if($wannaBuyer) {
-
             return redirect()->route('buyers.show', [
                 
                 'product' => $request->product_id,
@@ -87,16 +55,10 @@ class BuyerController extends Controller
             }
         );
 
-
-    
-        return redirect()->route('buyers.show', [
-                
+        return redirect()->route('buyers.show', [     
                 'product' => $request->product_id,
                 'buyer' =>  $wannaBuyer->id,
-
         ]);
-
-
         
     }
 
@@ -111,41 +73,14 @@ class BuyerController extends Controller
     
         $buyer = Buyer::where('id', $wannaBuyer)->first();
 
-
-
         $buyerProduct = Buyer::where('id', $wannaBuyer)->where('product_id', $product)
         ->first();
         $buyerProduct->load('product');
     
-
         $productComments = ProductComment::where('buyer_id',$wannaBuyer)->paginate(4);
         $productComments->load('user');
         
-
         return view('productComments.show', compact('product', 'wannaBuyer','buyer', 'buyerProduct', 'productComments'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
     }
 
     /**
