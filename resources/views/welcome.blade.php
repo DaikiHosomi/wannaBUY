@@ -117,7 +117,7 @@
 
                     <div class="row my-5 justify-content-center">
                         <div class="col-md-6">
-                            <img src="https://cdn.pixabay.com/photo/2017/08/06/22/12/books-2596900_1280.jpg"  class="d-none d-sm-block image-list img-fluid"  alt="">
+                            <img src="../image/use1.jpg"  class="d-none d-sm-block image-list img-fluid"  alt="">
                         </div>
                         <div class="col-md-6">
                             <div class="way-box box">
@@ -148,13 +148,13 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <img src="https://cdn.pixabay.com/photo/2018/05/28/11/51/woman-3435842_1280.jpg" class="d-none d-sm-block image-list img-fluid" alt="">                 
+                            <img src="../image/use2.jpg" class="d-none d-sm-block image-list img-fluid" alt="">                 
                         </div>
                     </div>
 
                     <div class="row my-5">
                         <div class="col-md-6">
-                            <img src="https://www.apu.ac.jp/home/img/contents/campusmap.html/a.jpg" class="d-none d-sm-block image-list img-fluid"  alt="">
+                            <img src="../image/use3.jpg" class="d-none d-sm-block image-list img-fluid"  alt="">
                         </div>
                         <div class="col-md-6">
                             <div class="way-box box">
