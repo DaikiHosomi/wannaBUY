@@ -187,16 +187,21 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
 
-        $productCategories = ProductCategory::all();
-        $productConditions = ProductCondition::all();
-        $transactionWay = TransactionWay::all();
+        if ($product->user_id != Auth::id()) {
+            return abort (403);
+        } else {
+            $productCategories = ProductCategory::all();
+            $productConditions = ProductCondition::all();
+            $transactionWay = TransactionWay::all();
+        
+            return view('products.edit', [
+                'productCatgories' => $productCategories,
+                'productConditions' => $productConditions,
+                'transactionWays' => $transactionWay,
+                'product' => $product,
+            ]);
+        }
     
-        return view('products.edit', [
-            'productCatgories' => $productCategories,
-            'productConditions' => $productConditions,
-            'transactionWays' => $transactionWay,
-            'product' => $product,
-        ]);
     }
 
     /**
@@ -285,7 +290,7 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         if ($product->user_id != Auth::id()) {
-            return abort (500);
+            return abort (403);
         } else {
             $product->delete();
             return redirect()->route('products.index')->with('message', '商品を削除しました');

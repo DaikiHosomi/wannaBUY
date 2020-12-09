@@ -53,7 +53,7 @@ class PostCommentController extends Controller
     {
     
         if ($postComment->user_id != Auth::id()) {
-            return abort (500);
+            return abort (403);
         } else {
             $postComment->delete();
             return redirect('/posts/' .$postComment->post_id)->with('message', 'コメントを削除しました');
